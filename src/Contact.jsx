@@ -60,7 +60,7 @@ const Contact = () => {
               <div className="space-y-4 text-gray-800">
                 <div className="flex items-center gap-3">
                   <FaPhoneAlt className="text-amber-400" />
-                  <a href="tel:+254718540806" className="hover:underline">+254 757855508</a>
+                  <a href="tel:+25475785508" className="hover:underline">+254 757855508</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaEnvelope className="text-amber-400" />
