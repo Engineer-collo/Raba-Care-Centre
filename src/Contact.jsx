@@ -46,7 +46,7 @@ const Contact = () => {
 
       <div className="min-h-screen bg-blue-50 pt-20 pb-10 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-amber-400 mb-8">Get in Touch</h2>
+          <h2 className="text-4xl font-bold text-center  mb-8">Get in Touch</h2>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
@@ -54,7 +54,7 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-amber-400 mb-4">Let's Connect!</h3>
               <p className="text-gray-700 mb-6">
                 Whether you're reaching out for collaboration, questions, feedback, or just to say hi —
-                I’m always happy to hear from fellow creators, clients, and dreamers!
+                I’m always happy to hear from you!
               </p>
 
               <div className="space-y-4 text-gray-800">
