@@ -195,48 +195,115 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 px-6 text-sm">
-  <div className="max-w-4xl mx-auto text-left">
-    <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+      <footer className="bg-gray-900 text-white py-10 px-6 text-sm">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
 
-    <div className="space-y-3">
-      <a
-        href="https://facebook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 hover:text-blue-600 transition-colors"
-      >
-        <FaFacebookF /> Facebook
-      </a>
-      <a
-        href="https://twitter.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 hover:text-blue-400 transition-colors"
-      >
-        <FaTwitter /> Twitter
-      </a>
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 hover:text-blue-700 transition-colors"
-      >
-        <FaLinkedinIn /> LinkedIn
-      </a>
-      <a
-        href="https://instagram.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 hover:text-pink-500 transition-colors"
-      >
-        <FaInstagram /> Instagram
-      </a>
-    </div>
+        {/* Vertical Quick Links */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-3">
+            <li>
+              <a href="#home" className="hover:text-indigo-500 flex items-center gap-2">
+                <FaHome className="text-gray-400 text-lg" />
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#about" className="hover:text-indigo-500 flex items-center gap-2">
+                <FaInfoCircle className="text-gray-400 text-lg" />
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#services" className="hover:text-indigo-500 flex items-center gap-2">
+                <FaBriefcase className="text-gray-400 text-lg" />
+                My Services
+              </a>
+            </li>
+            <li>
+              <a href="#blog" className="hover:text-indigo-500 flex items-center gap-2">
+                <FaBlog className="text-gray-400 text-lg" />
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="#events" className="hover:text-indigo-500 flex items-center gap-2">
+                <FaCalendarAlt className="text-gray-400 text-lg" />
+                Events
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-indigo-500 flex items-center gap-2">
+                <FaEnvelope className="text-gray-400 text-lg" />
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
 
-    <p className="text-gray-400 mt-6">© 2025 Rk-Globals. All rights reserved.</p>
-  </div>
-</footer>
+        {/* Social Media */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+          <div className="space-y-4">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-blue-600 transition-colors"
+            >
+              <FaFacebookF /> Facebook
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+            >
+              <FaTwitter /> Twitter
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-blue-700 transition-colors"
+            >
+              <FaLinkedinIn /> LinkedIn
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-pink-500 transition-colors"
+            >
+              <FaInstagram /> Instagram
+            </a>
+          </div>
+        </div>
+
+        {/* Embedded Map */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Our Location</h3>
+          <div className="rounded-lg overflow-hidden shadow-md">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.47726118005!2d36.78196903881193!3d-1.1922710496990803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d2cc2119bdd%3A0xf05f4bef7d1af588!2sGuango%20Estate%2C%20Muchatha!5e0!3m2!1sen!2ske!4v1751631583808!5m2!1sen!2ske"
+              width="100%"
+              height="220"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="Our location"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer bottom */}
+      <div className="mt-10 text-center text-gray-400">
+        © 2025 Rk-Globals. All rights reserved.
+      </div>
+    </footer>
     </div>
   );
 };
