@@ -195,27 +195,48 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-6 text-center text-sm">
+      <footer className="bg-gray-900 text-white py-8 px-6 text-sm">
+  <div className="max-w-4xl mx-auto text-left">
+    <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
 
-        <div className="space-y-2 text-sm mt-6">
-        {/* <h3>Follow me</h3> */}
-
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600">
+    <div className="space-y-3">
+      <a
+        href="https://facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:text-blue-600 transition-colors"
+      >
         <FaFacebookF /> Facebook
       </a>
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-400">
+      <a
+        href="https://twitter.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+      >
         <FaTwitter /> Twitter
       </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-700">
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:text-blue-700 transition-colors"
+      >
         <FaLinkedinIn /> LinkedIn
       </a>
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-pink-500">
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:text-pink-500 transition-colors"
+      >
         <FaInstagram /> Instagram
       </a>
     </div>
 
-        © 2025 Rk-Globals. All rights reserved.
-      </footer>
+    <p className="text-gray-400 mt-6">© 2025 Rk-Globals. All rights reserved.</p>
+  </div>
+</footer>
     </div>
   );
 };
