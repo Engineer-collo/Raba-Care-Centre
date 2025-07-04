@@ -246,7 +246,7 @@ const HomePage = () => {
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="space-y-4">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/redempta.aseyo"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-blue-600 transition-colors"
@@ -254,15 +254,7 @@ const HomePage = () => {
               <FaFacebookF /> Facebook
             </a>
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-blue-400 transition-colors"
-            >
-              <FaTwitter /> Twitter
-            </a>
-            <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/redemta-aseyo-814b1979/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-blue-700 transition-colors"
@@ -270,7 +262,7 @@ const HomePage = () => {
               <FaLinkedinIn /> LinkedIn
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/redemptakanja/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-pink-500 transition-colors"
