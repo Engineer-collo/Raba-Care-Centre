@@ -333,7 +333,7 @@ const HomePage = () => {
         <p className="mb-6 text-lg">
           Let’s work together to unlock your calling and build a life you love.
         </p>
-        <a href="#contact" className="bg-white text--400 px-6 py-3 rounded-full hover:bg-gray-100">
+        <a href="#contact" className="bg-white text-yellow-400 px-6 py-3 rounded-full hover:bg-gray-100">
           Book a Clarity Call
         </a>
       </section>
