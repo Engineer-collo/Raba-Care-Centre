@@ -142,13 +142,13 @@ const HomePage = () => {
     {/* Core Values Card */}
     <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
       <h3 className="text-center font-semibold text-xl mb-3">Our Core Values</h3>
-      <ul className="text-gray-600 list-disc pl-5 space-y-2">
-        <li>God First</li>
-        <li>Hard Work</li>
-        <li>Discipline</li>
-        <li>Execution</li>
-        <li>Legacy</li>
-      </ul>
+      <ul className="list-disc list-inside text-gray-600 text-center space-y-2">
+  <li>God First</li>
+  <li>Hard Work</li>
+  <li>Discipline</li>
+  <li>Execution</li>
+  <li>Legacy  </li>
+</ul>
     </div>
   </div>
 </section>
