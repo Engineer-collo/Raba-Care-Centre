@@ -112,20 +112,19 @@ const HomePage = () => {
   </div>
 </section>
 
-      {/* About Section */}
-      <section id="about" className="py-16 px-6 max-w-5xl mx-auto">
+{/* About Section */}
+<section id="about" className="py-16 px-6 max-w-5xl mx-auto">
   <h2 className="text-3xl font-bold mb-4 text-center ">About Rk-Globals</h2>
 
   <p className="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-  Redempta Kanja Global is a training and coaching consultancy firm that empowers individuals 
-  and organizations to achieve their fullest potential through one-on-one meetings, workshops/seminars, events, and team building.
+    Redempta Kanja Global is a training and coaching consultancy firm that empowers individuals 
+    and organizations to achieve their fullest potential through one-on-one meetings, workshops/seminars, events, and team building.
+  </p>
 
-</p>
-
-  <div className="pt-10 grid md:grid-cols-2 gap-6">
+  <div className="pt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {/* Vision Card */}
     <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
-      <h3 className="text-center font-semibold text-xl mb-3 ">Our Vision</h3>
+      <h3 className="text-center font-semibold text-xl mb-3">Our Vision</h3>
       <p className="text-gray-600 leading-relaxed">
         To inspire and challenge millions of individuals to take charge, level up, and thrive unapologetically.
       </p>
@@ -133,11 +132,23 @@ const HomePage = () => {
 
     {/* Mission Card */}
     <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
-      <h3 className="text-center font-semibold text-xl mb-3 ">Our Mission</h3>
+      <h3 className="text-center font-semibold text-xl mb-3">Our Mission</h3>
       <p className="text-gray-600 leading-relaxed">
         To equip, mentor, and coach professionals, business leaders, and students toward fulfilling and productive lives
         realized by taking charge of one’s personal and professional growth — bringing dreams to reality.
       </p>
+    </div>
+
+    {/* Core Values Card */}
+    <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
+      <h3 className="text-center font-semibold text-xl mb-3">Our Core Values</h3>
+      <ul className="text-gray-600 list-disc pl-5 space-y-2">
+        <li>God First</li>
+        <li>Hard Work</li>
+        <li>Discipline</li>
+        <li>Execution</li>
+        <li>Legacy</li>
+      </ul>
     </div>
   </div>
 </section>
