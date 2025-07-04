@@ -56,58 +56,44 @@ const HomePage = () => {
   </a>
 </nav>
 
-      {/* Hero Section with Image Behind Text */}
-      <section id="home" className="relative h-auto min-h-screen flex items-center justify-center text-center text-white overflow-hidden py-20">
+<section
+  id="home"
+  className="py-8 relative min-h-screen flex items-center justify-center text-white bg-black overflow-hidden"
+>
   {/* Background Image */}
   <img
     src="/photo.png"
-    alt="Hero Background"
-    className="absolute inset-0 w-full h-full object-cover z-0"
+    alt="Redempta Kanja Global"
+    className="absolute inset-0 w-full h-full object-cover opacity-70 z-0"
   />
-  
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+
+  {/* Overlay (for a clean dark filter) */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/90 z-0"></div>
 
   {/* Hero Content */}
-  <div className="relative z-10 px-4 max-w-4xl mx-auto">
-    <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
-      Find Your Purpose. Live Fully.
+  <div className="relative z-10 max-w-5xl px-6 text-center space-y-8">
+    <h1 className="text-4xl md:text-6xl font-bold leading-snug text-amber-400 drop-shadow">
+      Welcome to Redempta Kanja Global (RK Global)
     </h1>
 
-    <p className="text-lg md:text-xl leading-relaxed text-gray-100 bg-black bg-opacity-40 p-6 rounded-lg shadow-lg mb-8">
-      <span className="block mb-4">
-        <strong>Redempta Kanja Global (RKG)</strong> is not just another consultancy firm — we are your dedicated partner in unlocking your full potential.
-        We empower individuals, communities, and organizations to achieve their boldest dreams.
-      </span>
-
-      <span className="block mb-4">
-        Our coaching programs are thoughtfully designed to inspire, train, and equip you through workshops, one-on-one sessions,
-        seminars, power talks, and impactful team-building events.
-      </span>
-
-      <span className="block mb-4 italic">
-        As Hal Elrod, author of <strong>"The Miracle Morning"</strong>, said: <q>Your level of success will rarely exceed your level of personal development.</q>
-      </span>
-
-      <span className="block mb-4">
-        At RKG, we guide both individuals and teams to take full ownership of their growth — which in turn boosts productivity,
-        reduces stress, increases joy, and leads to phenomenal success.
-      </span>
-
-      <span className="block mb-4">
-        Whether you feel stuck or inspired for change, your transformation begins now. Choose to rise above and chase what once felt impossible.
-      </span>
-
-      <span className="block font-semibold text-amber-300 mt-4">
-        It's time to take charge, level up, and thrive unapologetically!
-      </span>
+    <p className="text-lg md:text-xl text-gray-200 leading-relaxed bg-black bg-opacity-30 p-6 rounded-xl shadow-lg">
+      <strong className="text-white">Your trusted partner in unlocking purpose, shifting mindsets, and realizing full potential.</strong>
+      <br /><br />
+      We empower individuals, teams, and organizations to move from <em>confusion → clarity</em>, and from <em>survival → significance</em>.
+      Through coaching, training, and mentorship — via one-on-one sessions, workshops, seminars, power talks, and team-building — we address the total you: <strong>mindset, skills, spirit, and strategy</strong>.
+      <br /><br />
+      As Hal Elrod said: <q>Your level of success will rarely exceed your level of personal development.</q>
+      <br /><br />
+      At RK Global, we guide you to take ownership of your growth and experience transformational results: increased productivity, resilience, joy, and high-impact performance.
+      <br /><br />
+      Whether you’re inspired to grow or desperate for change — the journey begins with a single decision.
     </p>
 
     <a
       href="#book"
-      className="bg-amber-400 hover:bg-amber-400 transition-colors px-8 py-4 rounded-full text-lg font-semibold shadow-lg"
+      className="bg-amber-400 hover:bg-white text-black font-semibold px-8 py-4 rounded-full shadow-lg transition"
     >
-      Book a Free Call
+      Book a Clarity Call
     </a>
   </div>
 </section>
