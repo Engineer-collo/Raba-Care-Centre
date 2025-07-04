@@ -64,7 +64,7 @@ const HomePage = () => {
   <img
     src="/photo.png"
     alt="Redempta Kanja Global"
-    className="absolute inset-0 w-full h-full object-cover opacity-70 z-0"
+    className="absolute inset-0 w-full h-full object-cover opacity-150 z-5"
   />
 
   {/* Overlay (for a clean dark filter) */}
@@ -76,8 +76,8 @@ const HomePage = () => {
       Welcome to Redempta Kanja Global (RK Global)
     </h1>
 
-    <p className="text-lg md:text-xl text-gray-200 leading-relaxed bg-black bg-opacity-30 p-6 rounded-xl shadow-lg">
-      <strong className="text-white">Your trusted partner in unlocking purpose, shifting mindsets, and realizing full potential.</strong>
+    <p className="text-lg md:text-xl text-gray-400 leading-relaxed bg-black bg-opacity-10 p-6 rounded-xl shadow-lg">
+      <strong className="text-gray-360">Your trusted partner in unlocking purpose, shifting mindsets, and realizing full potential.</strong>
       <br /><br />
       We empower individuals, teams, and organizations to move from <em>confusion → clarity</em>, and from <em>survival → significance</em>.
       Through coaching, training, and mentorship — via one-on-one sessions, workshops, seminars, power talks, and team-building — we address the total you: <strong>mindset, skills, spirit, and strategy</strong>.
