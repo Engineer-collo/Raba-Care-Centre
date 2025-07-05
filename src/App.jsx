@@ -1,66 +1,25 @@
 import React from 'react';
+import Navbar from './Navbar';
 import Contact from './Contact';
 import Testimonials from './Testimonials';
 import { FaHome, FaInfoCircle, FaBriefcase, FaBlog, FaCalendarAlt, FaEnvelope,  } from 'react-icons/fa';
 import { FaFacebookF,FaYoutube,FaPenNib, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { SiTiktok } from 'react-icons/si';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 
 
 const HomePage = () => {
   return (
+    <>
+    <Navbar/>
     <div className="bg-white text-gray-800 font-sans">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center px-6 py-4 shadow-md bg-white">
-      <div className="flex items-center gap-1 px-6 py-2">
-  <img className="h-10 w-12 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
-  <div className="text-2xl font-bold text-yellow-600">RkGlobal</div>
-</div>
 
-  <ul className="hidden md:flex gap-6 text-sm font-medium items-center ">
-    <li>
-      <a href="#home" className="hover:text-indigo-600 flex flex-col items-center text-sm">
-        <FaHome className=" text-gray-500 text-2xl mb-1" />
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="#about" className="hover:text-indigo-600 flex flex-col items-center text-sm">
-        <FaInfoCircle className="text-gray-500 text-2xl mb-1" />
-        About
-      </a>
-    </li>
-    <li>
-      <a href="#services" className="hover:text-indigo-600 flex flex-col items-center text-sm">
-        <FaBriefcase className="text-gray-500 text-2xl mb-1" />
-        My Services
-      </a>
-    </li>
-    <li>
-      <a href="#blog" className="hover:text-indigo-600 flex flex-col items-center text-sm">
-        <FaBlog className="text-gray-500 text-2xl mb-1" />
-        Blog
-      </a>
-    </li>
-    <li>
-      <a href="#contact" className="hover:text-indigo-600 flex flex-col items-center text-sm">
-        <FaEnvelope className="text-gray-500 text-2xl mb-1" />
-        Contact
-      </a>
-    </li>
-  </ul>
-
-  <a href="#book" className="hidden md:block bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-400">
-    Book a Session
-  </a>
-</nav>
-
-<section
+ <section
   id="home"
   className="py-8 relative min-h-screen flex items-center justify-center text-white bg-black overflow-hidden"
->
+ >
   {/* Background Image */}
   <img
     src="/photo.png"
@@ -94,7 +53,7 @@ const HomePage = () => {
 
     <a
       href="#book"
-      className="bg-amber-400 hover:bg-white text-black font-semibold px-8 py-4 rounded-full shadow-lg transition"
+      className="bg-amber-400 hover:bg-amber-600 text-black font-semibold px-8 py-4 rounded-full shadow-lg transition"
     >
       Book a Clarity Call
     </a>
@@ -103,7 +62,7 @@ const HomePage = () => {
 
 {/* About Section */}
 <section id="about" className="py-16 px-6 max-w-5xl mx-auto">
-  <h2 className="text-3xl font-bold mb-4 text-center ">About RkGlobal</h2>
+  <h2 className="text-3xl font-bold mb-4 text-center ">About Rk Global</h2>
 
   <p className="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto">
   RK Global is a purpose-driven coaching and training consultancy that empowers 
@@ -173,7 +132,7 @@ team building and creative storytelling, we raise warriors who refuse to settle,
 
       {/* Services Section */}
       <section id="services" className="bg-gray-100 py-16 px-6">
-        <h2 className="text-3xl font-bold text-center mb-8">What I Offer</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">What we Offer</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
           {/*Teens */}
@@ -258,7 +217,7 @@ team building and creative storytelling, we raise warriors who refuse to settle,
           alt="Find and Adopt Your Purpose"
         />
       </a>
-      <h4 className="font-semibold text-xl mb-3 text-gray-800">Find & Adopt Your Purpose</h4>
+      <h4 className="font-semibold text-xl mb-3 text-gray-800">Find Adopt Live Your Purpose</h4>
       <p className="text-gray-700 text-sm leading-relaxed max-h-[360px] overflow-y-auto pr-1">
         This book is for anyone who has doubted their potential or settled for less. It’s a heartfelt reminder that
         discovering, embracing, and living your purpose is possible and necessary. Through practical tools, you'll:
@@ -366,7 +325,7 @@ team building and creative storytelling, we raise warriors who refuse to settle,
         <p className="mb-6 text-lg">
           Let’s work together to unlock your calling and build a life you love.
         </p>
-        <a href="#contact" className="bg-white text-yellow-400 px-6 py-3 rounded-full hover:bg-gray-100">
+        <a href="#contact" className="bg-white text-yellow-400 px-6 py-3 rounded-full hover:text-white hover:bg-amber-600">
           Book a Clarity Call
         </a>
       </section>
@@ -384,37 +343,37 @@ team building and creative storytelling, we raise warriors who refuse to settle,
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-3">
             <li>
-              <a href="#home" className="hover:text-indigo-500 flex items-center gap-2">
+              <a href="#home" className="hover:text-amber-400 flex items-center gap-2">
                 <FaHome className="text-gray-400 text-lg" />
                 Home
               </a>
             </li>
             <li>
-              <a href="#about" className="hover:text-indigo-500 flex items-center gap-2">
+              <a href="#about" className="hover:text-amber-400 flex items-center gap-2">
                 <FaInfoCircle className="text-gray-400 text-lg" />
                 About
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-indigo-500 flex items-center gap-2">
+              <a href="#services" className="hover:text-amber-400 flex items-center gap-2">
                 <FaBriefcase className="text-gray-400 text-lg" />
                 My Services
               </a>
             </li>
             <li>
-              <a href="#blog" className="hover:text-indigo-500 flex items-center gap-2">
+              <a href="#blog" className="hover:text-amber-400 flex items-center gap-2">
                 <FaBlog className="text-gray-400 text-lg" />
                 Blog
               </a>
             </li>
             <li>
-              <a href="#events" className="hover:text-indigo-500 flex items-center gap-2">
+              <a href="#events" className="hover:text-amber-400 flex items-center gap-2">
                 <FaCalendarAlt className="text-gray-400 text-lg" />
                 Events
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-indigo-500 flex items-center gap-2">
+              <a href="#contact" className="hover:text-amber-400 flex items-center gap-2">
                 <FaEnvelope className="text-gray-400 text-lg" />
                 Contact
               </a>
@@ -512,6 +471,8 @@ team building and creative storytelling, we raise warriors who refuse to settle,
 </div>
     </footer>
     </div>
+  </>
+
   );
 };
 

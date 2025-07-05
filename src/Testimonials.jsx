@@ -17,14 +17,14 @@ export default function Testimonials() {
       {
         name: "Mish Njeri",
         content:
-          "What sets Rk-Globals apart is their commitment to real transformation. I highly recommend them!",
+          "What sets RkGlobal apart is their commitment to real transformation. I highly recommend them!",
         profile_pic:
           "https://images.pexels.com/photos/5065240/pexels-photo-5065240.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=100",
       },
       {
         name: "Brian Ochieng",
         content:
-          "From feeling stuck to finding direction—Rk-Globals helped me take charge of my journey.",
+          "From feeling stuck to finding direction—RkGlobal helped me take charge of my journey.",
         profile_pic:
           "https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=100",
       },
