@@ -4,7 +4,8 @@ import Testimonials from './Testimonials';
 import { FaHome, FaInfoCircle, FaBriefcase, FaBlog, FaCalendarAlt, FaEnvelope,  } from 'react-icons/fa';
 import { FaFacebookF,FaYoutube,FaPenNib, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { SiTiktok } from 'react-icons/si';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -15,10 +16,10 @@ const HomePage = () => {
       <nav className="flex justify-between items-center px-6 py-4 shadow-md bg-white">
       <div className="flex items-center gap-1 px-6 py-2">
   <img className="h-10 w-12 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
-  <div className="text-2xl font-bold text-yellow-600">Rk-Global</div>
+  <div className="text-2xl font-bold text-yellow-600">RkGlobal</div>
 </div>
 
-  <ul className="hidden md:flex gap-6 text-sm font-medium items-center">
+  <ul className="hidden md:flex gap-6 text-sm font-medium items-center ">
     <li>
       <a href="#home" className="hover:text-indigo-600 flex flex-col items-center text-sm">
         <FaHome className=" text-gray-500 text-2xl mb-1" />
@@ -73,18 +74,20 @@ const HomePage = () => {
   {/* Hero Content */}
   <div className="relative z-10 max-w-5xl px-6 text-center space-y-8">
     <h1 className="text-4xl md:text-6xl font-bold leading-snug text-amber-400 drop-shadow">
-      Welcome to Redempta Kanja Global (RK Global)
+      Welcome to Redempta Kanja Global
     </h1>
 
     <p className="text-lg md:text-xl text-gray-400 leading-relaxed bg-black bg-opacity-10 p-6 rounded-xl shadow-lg">
       <strong className="text-gray-360">Your trusted partner in unlocking purpose, shifting mindsets, and realizing full potential.</strong>
       <br /><br />
       We empower individuals, teams, and organizations to move from <em>confusion → clarity</em>, and from <em>survival → significance</em>.
-      Through coaching, training, and mentorship — via one-on-one sessions, workshops, seminars, power talks, and team-building — we address the total you: <strong>mindset, skills, spirit, and strategy</strong>.
+      Through coaching, training, and mentorship — via one-on-one sessions, workshops, seminars, power talks, 
+      and team-building — we address the total you: <strong>mindset, skills, spirit, and strategy</strong>.
       <br /><br />
       As Hal Elrod said: <q>Your level of success will rarely exceed your level of personal development.</q>
       <br /><br />
-      At RK Global, we guide you to take ownership of your growth and experience transformational results: increased productivity, resilience, joy, and high-impact performance.
+      At RK Global, we guide you to take ownership of your growth and experience transformational results: 
+      increased productivity, resilience, joy, and high-impact performance.
       <br /><br />
       Whether you’re inspired to grow or desperate for change — the journey begins with a single decision.
     </p>
@@ -100,42 +103,71 @@ const HomePage = () => {
 
 {/* About Section */}
 <section id="about" className="py-16 px-6 max-w-5xl mx-auto">
-  <h2 className="text-3xl font-bold mb-4 text-center ">About Rk-Globals</h2>
+  <h2 className="text-3xl font-bold mb-4 text-center ">About RkGlobal</h2>
 
   <p className="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-    Redempta Kanja Global is a training and coaching consultancy firm that empowers individuals 
-    and organizations to achieve their fullest potential through one-on-one meetings, workshops/seminars, events, and team building.
+  RK Global is a purpose-driven coaching and training consultancy that empowers 
+  individuals and organizations to awaken boldness, defy limitations, and lead lives of impact.
+We are the launchpad for dreamers, leaders, and legacy-builders — equipping them to rise above fear, 
+patterns, and resistance and take radical ownership of their journey.
+Through high-impact coaching, transformational training, thought-provoking speaking, 
+team building and creative storytelling, we raise warriors who refuse to settle, shrink, or apologize for their greatness.
+
   </p>
 
   <div className="pt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {/* Vision Card */}
     <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
-      <h3 className="text-center font-semibold text-xl mb-3">Our Vision</h3>
+      <h3 className="text-center font-semibold text-xl mb-3">     
+         <FontAwesomeIcon icon={faGlobe} className='px-2' />
+      Our Vision</h3>
       <p className="text-gray-600 leading-relaxed">
-        To inspire and challenge millions of individuals to take charge, level up, and thrive unapologetically.
-      </p>
+      To awaken a fearless generation of individuals and teams who break limitations, confront mediocrity, and rise with clarity, 
+      courage, and conviction — building purpose-driven lives that leave a mark and disrupt the status quo</p>
     </div>
 
-    {/* Mission Card */}
-    <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
-      <h3 className="text-center font-semibold text-xl mb-3">Our Mission</h3>
-      <p className="text-gray-600 leading-relaxed">
-        To equip, mentor, and coach professionals, business leaders, and students toward fulfilling and productive lives
-        realized by taking charge of one’s personal and professional growth — bringing dreams to reality.
-      </p>
-    </div>
+{/* Mission Card */}
+<div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
+  <h3 className="text-center font-semibold text-xl mb-3">
+    <FontAwesomeIcon icon={faRocket} className="px-2 text-indigo-500" />
+    Our Mission
+  </h3>
+  <p className="text-gray-600 leading-relaxed">
+    We challenge individuals and teams to break free from internal and external limitations, 
+    take personal leadership, unlock their potential, and build purpose-driven lives.
+  </p>
+</div>
 
-    {/* Core Values Card */}
-    <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition">
-      <h3 className="text-center font-semibold text-xl mb-3">Our Core Values</h3>
-      <ul className="list-disc list-inside text-gray-600 text-center space-y-2">
-  <li>God First</li>
-  <li>Hard Work</li>
-  <li>Discipline</li>
-  <li>Execution</li>
-  <li>Legacy  </li>
-</ul>
-    </div>
+{/* Core Values Card */}
+<div className="flex justify-center">
+  <div className="border border-indigo-200 rounded-xl p-6 bg-white shadow-md hover:shadow-lg transition w-full max-w-md text-center">
+    <h3 className="font-semibold text-xl mb-6">Our Core Values</h3>
+    
+    <ul className="space-y-4 text-gray-700 flex flex-col items-center">
+      <li className="flex items-center gap-3 justify-center">
+        <span className="text-amber-500 text-xl">🙏</span>
+        <span>God First</span>
+      </li>
+      <li className="flex items-center gap-3 justify-center">
+        <span className="text-amber-500 text-xl">💪</span>
+        <span>Hard Work</span>
+      </li>
+      <li className="flex items-center gap-3 justify-center">
+        <span className="text-amber-500 text-xl">📏</span>
+        <span>Discipline</span>
+      </li>
+      <li className="flex items-center gap-3 justify-center">
+        <span className="text-amber-500 text-xl">🚀</span>
+        <span>Execution</span>
+      </li>
+      <li className="flex items-center gap-3 justify-center">
+        <span className="text-amber-500 text-xl">🏛️</span>
+        <span>Legacy</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -204,7 +236,8 @@ const HomePage = () => {
       <section className="py-12 px-6 max-w-6xl mx-auto text-center bg-gray-50">
   <h2 className="text-4xl font-bold mb-12 text-gray-800">Books by Redempta Kanja</h2>
   <p className="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto pb-12">
-  Each of these books is a movement — a bold call to rise, reclaim your identity, unlock your purpose, and take radical responsibility for your life.
+  Each of these books is a movement — a bold call to rise, reclaim your identity, 
+  unlock your purpose, and take radical responsibility for your life.
   They are tools for personal transformation. Dive in, reflect deeply, and allow these books to unravel your unfolding.
 </p>
 
@@ -451,25 +484,32 @@ const HomePage = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Our Location</h3>
           <div className="rounded-lg overflow-hidden shadow-md">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.47726118005!2d36.78196903881193!3d-1.1922710496990803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d2cc2119bdd%3A0xf05f4bef7d1af588!2sGuango%20Estate%2C%20Muchatha!5e0!3m2!1sen!2ske!4v1751631583808!5m2!1sen!2ske"
-              width="100%"
-              height="220"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-              title="Our location"
-            ></iframe>
+          <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.731409511709!2d36.76350071224031!3d-1.207134130501369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f22b36e1fe5f9%3A0xea7d820876f42a71!2sRuaka!5e0!3m2!1sen!2ske!4v1751703103025!5m2!1sen!2ske" 
+  width="100%" 
+  height="300" 
+  style={{ border: 0 }} 
+  allowFullScreen="" 
+  loading="lazy" 
+  referrerPolicy="no-referrer-when-downgrade"
+/>
           </div>
         </div>
       </div>
 
-      {/* Footer bottom */}
-      <div className="mt-10 text-center text-gray-400">
-        © 2025 Rk-Globals. All rights reserved.
-      </div>
+{/* Footer bottom */}
+<div className="mt-10 text-center text-gray-400">
+  © 2025 Rk-Globals. All rights reserved. <br />
+  This Website was Built with ❤️ by{" "}
+  <a
+    href="https://portfolio-five-beta-49.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-amber-400 font-semibold hover:text-white"
+  >
+    Engineer Collins
+  </a>
+</div>
     </footer>
     </div>
   );
