@@ -7,7 +7,8 @@ import {
   FaHome,
   FaInfoCircle,
   FaBriefcase,
-  FaBlog
+  FaBlog,
+  FaPhoneAlt
 } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -20,21 +21,41 @@ const Navbar = () => {
 
   return (
     <header className="bg-white shadow-md relative z-50">
+      {/* Top Contact Info */}
+      <div className="bg-gray-300 text-sm md:text-base py-2 px-4 flex justify-between items-center">
+        {/* Left: Phone */}
+        <div className="flex items-center gap-2 text-white">
+          <FaPhoneAlt />
+          <a
+            href="tel:+254757855508"
+            className="hover:underline"
+          >
+            +254 757 855 508
+          </a>
+        </div>
+
+        {/* Right: Email */}
+        <div className="flex items-center gap-2 text-white">
+          <FaEnvelope />
+          <a
+            href="mailto:info@redemptakanjaglobal.com"
+            className="hover:underline"
+          >
+            info@redemptakanjaglobal.com
+          </a>
+        </div>
+      </div>
 
       {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center gap-1 px-6 py-2">
-  <img className="h-10 w-12 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
-  <div className="hover:text-amber-600 text-2xl font-bold text-amber-400">Rk Global</div>
-  </div>
+        <div className="flex items-center gap-2">
+          <img className="h-10 w-12 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
+          <div className="text-amber-400 text-2xl font-bold hover:text-amber-600">Rk Global</div>
+        </div>
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 items-center text-sm font-medium">
-          <div className="flex items-center gap-2">
-            <img className="h-10 w-12" src="/rk-logo.png" alt="Rk-Logo" />
-            <div className="text-amber-400 text-2xl font-bold">Rk Global</div>
-          </div>
-
           <a href="#home" className="hover:text-amber-600 flex flex-col items-center">
             <FaHome className="text-gray-500 text-2xl" />
             Home
