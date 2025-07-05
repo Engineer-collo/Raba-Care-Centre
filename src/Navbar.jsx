@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2 px-2">
           <img className="h-10 w-12 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
           <div className="hover:text-amber-600 text-2xl font-bold text-amber-400">
-            Rk GLOBAL
+            RK GLOBAL
           </div>
         </div>
 
