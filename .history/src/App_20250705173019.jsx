@@ -193,7 +193,7 @@ team building and creative storytelling, we raise warriors who refuse to settle,
         </div>
       </section>
 
-      <section id='products' className="py-12 px-6 max-w-6xl mx-auto text-center bg-gray-50">
+      <section id='books' className="py-12 px-6 max-w-6xl mx-auto text-center bg-gray-50">
   <h2 className="text-4xl font-bold mb-12 text-gray-800">Books by Redempta Kanja</h2>
   <p className="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto pb-12">
   Each of these books is a movement — a bold call to rise, reclaim your identity, 
@@ -295,7 +295,7 @@ team building and creative storytelling, we raise warriors who refuse to settle,
 </section>
 
 {/* Meet Our Team Section */}
-<section  id="team" className="py-16 px-6 bg-white">
+<section id="team" className="py-16 px-6 bg-white">
   <h2 className="text-3xl font-bold text-center mb-4">Meet Our Team</h2>
   <p className="text-gray-600 text-lg text-center max-w-3xl mx-auto mb-10">
     Behind every transformational experience at RK Global is a powerhouse team committed to excellence, authenticity, and impact.

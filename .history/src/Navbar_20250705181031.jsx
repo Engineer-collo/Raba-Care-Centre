@@ -93,7 +93,7 @@ const Navbar = () => {
           </a>
           <a
             href="#book"
-            className="ml-12 bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
+            className="ml-6 bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
           >
             Book a Session
           </a>

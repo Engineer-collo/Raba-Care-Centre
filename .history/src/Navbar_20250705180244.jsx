@@ -8,11 +8,8 @@ import {
   FaInfoCircle,
   FaBriefcase,
   FaBlog,
-  FaBoxOpen,
-  FaUsers,
   FaUser,
 } from 'react-icons/fa';
-
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,16 +81,16 @@ const Navbar = () => {
             Contact
           </a>
           <a href="#products" className="hover:text-amber-600 flex flex-col items-center">
-            <FaBoxOpen className="text-gray-500 text-2xl" />
+            <FaEnvelope className="text-gray-500 text-2xl" />
             Products 
           </a>
           <a href="#team" className="hover:text-amber-600 flex flex-col items-center">
-            <FaUsers className="text-gray-500 text-2xl" />
+            <FaEnvelope className="text-gray-500 text-2xl" />
             Our Team
           </a>
           <a
             href="#book"
-            className="ml-12 bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
+            className="bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
           >
             Book a Session
           </a>
@@ -127,11 +124,11 @@ const Navbar = () => {
             <a href="#contact" className="flex items-center gap-2 hover:text-blue-400">
               <FaEnvelope /> Contact
             </a>
-            <a href="#products" className="flex items-center gap-2 hover:text-blue-400">
-              <FaBoxOpen /> Products
+            <a href="#p" className="flex items-center gap-2 hover:text-blue-400">
+              <FaBlog /> Products
             </a>
             <a href="#team" className="flex items-center gap-2 hover:text-blue-400">
-              <FaUsers /> Team
+              <FaEnvelope /> Team
             </a>
 
 
