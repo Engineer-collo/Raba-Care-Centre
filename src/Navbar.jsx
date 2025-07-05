@@ -22,20 +22,20 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-md relative z-50">
       {/* Top Contact Info */}
-      <div className="bg-gray-400 text-sm md:text-base py-2 px-4 flex justify-between items-center">
+      <div className="bg-gray-400 text-sm md:text-base py-2 px-3 flex justify-between items-center">
         {/* Left: Phone */}
-        <div className="flex items-center gap-2 text-white">
+        <div className="flex items-center gap-1 text-white">
           <FaPhoneAlt />
           <a
             href="tel:+254757855508"
             className="hover:underline"
           >
-            0757855508
+            +254 757 855 508
           </a>
         </div>
 
         {/* Right: Email */}
-        <div className="flex items-center gap-2 text-white">
+        <div className="flex items-center gap-1 text-white">
           <FaEnvelope />
           <a
             href="mailto:info@redemptakanjaglobal.com"
