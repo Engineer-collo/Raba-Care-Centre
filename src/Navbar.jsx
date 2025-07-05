@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-md relative z-50">
       {/* Top Contact Info */}
-      <div className="bg-gray-300 text-sm md:text-base py-2 px-4 flex justify-between items-center">
+      <div className="bg-gray-400 text-sm md:text-base py-2 px-4 flex justify-between items-center">
         {/* Left: Phone */}
         <div className="flex items-center gap-2 text-white">
           <FaPhoneAlt />
@@ -30,7 +30,7 @@ const Navbar = () => {
             href="tel:+254757855508"
             className="hover:underline"
           >
-            +254 757 855 508
+            0757855508
           </a>
         </div>
 
