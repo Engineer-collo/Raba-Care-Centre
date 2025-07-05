@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import {
   FaBars,
   FaTimes,
-  FaUser,
+  FaPhone,
   FaEnvelope,
   FaHome,
   FaInfoCircle,
   FaBriefcase,
   FaBlog,
-  FaPhoneAlt
+  FaUser,
 } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -22,39 +22,43 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-md relative z-50">
       {/* Top Contact Info */}
-      <div className="bg-gray-400 text-sm md:text-base py-2 px-3 flex justify-between items-center">
-        {/* Left: Phone */}
-        <div className="flex items-center gap-1 text-white">
-          <FaPhoneAlt />
-          <a
-            href="tel:+254757855508"
-            className="hover:underline"
-          >
-            +254 757 855 508
-          </a>
-        </div>
+      <div className="bg-gray-400 text-white text-sm py-2 px-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
+          {/* Phone Left */}
+          <div className="flex items-center gap-1">
+            <FaPhone className="text-white" />
+            <a
+              href="tel:+254757855508"
+              className="hover:underline"
+            >
+              +254 757 855 508
+            </a>
+          </div>
 
-        {/* Right: Email */}
-        <div className="flex items-center gap-1 text-white">
-          <FaEnvelope />
-          <a
-            href="mailto:info@redemptakanjaglobal.com"
-            className="hover:underline"
-          >
-            info@redemptakanjaglobal.com
-          </a>
+          {/* Email Right */}
+          <div className="flex items-center gap-1">
+            <FaEnvelope className="text-white" />
+            <a
+              href="mailto:info@redemptakanjaglobal.com"
+              className="hover:underline"
+            >
+              info@redemptakanjaglobal.com
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Main Navigation */}
+      {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 px-2">
           <img className="h-10 w-12 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
-          <div className="text-amber-400 text-2xl font-bold hover:text-amber-600">Rk Global</div>
+          <div className="hover:text-amber-600 text-2xl font-bold text-amber-400">
+            Rk Global
+          </div>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 items-center text-sm font-medium">
           <a href="#home" className="hover:text-amber-600 flex flex-col items-center">
             <FaHome className="text-gray-500 text-2xl" />
@@ -76,7 +80,6 @@ const Navbar = () => {
             <FaEnvelope className="text-gray-500 text-2xl" />
             Contact
           </a>
-
           <a
             href="#book"
             className="bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
@@ -85,38 +88,35 @@ const Navbar = () => {
           </a>
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} aria-label="Toggle Menu">
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
+        {/* Mobile Toggle */}
+        <div className="md:hidden" onClick={toggleMenu}>
+          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed top-0 left-0 h-screen w-3/4 bg-amber-400 text-white px-6 py-8 z-50 md:hidden">
-          <button onClick={toggleMenu} className="absolute top-4 right-4">
-            <FaTimes size={24} />
-          </button>
-
+        <div
+          className="fixed top-0 left-0 h-screen w-3/4 bg-amber-400 text-white px-6 py-8 z-50 md:hidden"
+          onClick={toggleMenu}
+        >
           <nav className="space-y-6 mt-10 text-lg">
-            <a href="#home" onClick={toggleMenu} className="flex items-center gap-2 hover:text-blue-400">
+            <a href="#home" className="flex items-center gap-2 hover:text-blue-400">
               <FaHome /> Home
             </a>
-            <a href="#about" onClick={toggleMenu} className="flex items-center gap-2 hover:text-blue-400">
+            <a href="#about" className="flex items-center gap-2 hover:text-blue-400">
               <FaUser /> About
             </a>
-            <a href="#services" onClick={toggleMenu} className="flex items-center gap-2 hover:text-blue-400">
+            <a href="#services" className="flex items-center gap-2 hover:text-blue-400">
               <FaBriefcase /> Services
             </a>
-            <a href="#blog" onClick={toggleMenu} className="flex items-center gap-2 hover:text-blue-400">
+            <a href="#blog" className="flex items-center gap-2 hover:text-blue-400">
               <FaBlog /> Blog
             </a>
-            <a href="#contact" onClick={toggleMenu} className="flex items-center gap-2 hover:text-blue-400">
+            <a href="#contact" className="flex items-center gap-2 hover:text-blue-400">
               <FaEnvelope /> Contact
             </a>
-            <a href="#book" onClick={toggleMenu} className="block mt-4 bg-white text-center py-2 rounded-lg text-amber-400 hover:bg-amber-600">
+            <a href="#book" className="block mt-4 bg-white text-center py-2 rounded-lg text-amber-400 hover:bg-amber-600">
               Book a Session
             </a>
           </nav>

@@ -32,7 +32,7 @@ const HomePage = () => {
 
   {/* Hero Content */}
   <div className="relative z-10 max-w-5xl px-6 text-center space-y-8">
-    <h1 className="text-4xl md:text-6xl font-bold leading-snug text-amber-400 drop-shadow">
+    <h1 className="text-4xl md:text-5xl font-bold leading-snug text-amber-400 drop-shadow">
       Welcome to Redempta Kanja Global
     </h1>
 
@@ -130,58 +130,6 @@ team building and creative storytelling, we raise warriors who refuse to settle,
   </div>
 </section>
   
-{/* Meet Our Team Section */}
-<section id="team" className="py-16 px-6 bg-white">
-  <h2 className="text-3xl font-bold text-center mb-4">Meet Our Team</h2>
-  <p className="text-gray-600 text-lg text-center max-w-3xl mx-auto mb-10">
-    Behind every transformational experience at RK Global is a powerhouse team committed to excellence, authenticity, and impact.
-  </p>
-
-  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-    {/* Team Member 1 */}
-    <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
-      <img
-        src="/redempta.png"
-        alt="Redempta Kanja"
-        className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-amber-400"
-      />
-      <h3 className="text-xl font-semibold text-gray-800">Redempta Kanja</h3>
-      <p className="text-sm text-gray-600 mb-2">Founder & Lead Coach</p>
-      <p className="text-gray-700 text-sm">
-        Passionate about unlocking purpose, Redempta has helped hundreds step into boldness and significance.
-      </p>
-    </div>
-
-    {/* Team Member 2 */}
-    <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
-      <img
-        src="/james.png"
-        alt="Team Member"
-        className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-amber-400"
-      />
-      <h3 className="text-xl font-semibold text-gray-800">James Mwangi</h3>
-      <p className="text-sm text-gray-600 mb-2">Strategy & Training Lead</p>
-      <p className="text-gray-700 text-sm">
-        James brings clarity and structure to our programs, with years of experience in leadership development.
-      </p>
-    </div>
-
-    {/* Team Member 3 */}
-    <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
-      <img
-        src="/sarah.png"
-        alt="Team Member"
-        className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-amber-400"
-      />
-      <h3 className="text-xl font-semibold text-gray-800">Sarah Wambui</h3>
-      <p className="text-sm text-gray-600 mb-2">Programs & Client Success</p>
-      <p className="text-gray-700 text-sm">
-        Sarah ensures every client feels seen, heard, and supported throughout their transformation journey.
-      </p>
-    </div>
-  </div>
-</section>
-
 
       {/* Services Section */}
       <section id="services" className="bg-gray-100 py-16 px-6">
@@ -345,6 +293,60 @@ team building and creative storytelling, we raise warriors who refuse to settle,
     
   </div>
 </section>
+
+{/* Meet Our Team Section */}
+<section id="team" className="py-16 px-6 bg-white">
+  <h2 className="text-3xl font-bold text-center mb-4">Meet Our Team</h2>
+  <p className="text-gray-600 text-lg text-center max-w-3xl mx-auto mb-10">
+    Behind every transformational experience at RK Global is a powerhouse team committed to excellence, authenticity, and impact.
+  </p>
+
+  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    {/* Team Member 1 */}
+    <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
+      <img
+        src="/redempta.png"
+        alt="Redempta Kanja"
+        className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-amber-400"
+      />
+      <h3 className="text-xl font-semibold text-gray-800">Redempta Kanja</h3>
+      <p className="text-sm text-gray-600 mb-2">Founder & Lead Coach</p>
+      <p className="text-gray-700 text-sm">
+        Passionate about unlocking purpose, Redempta has helped hundreds step into boldness and significance.
+      </p>
+    </div>
+
+    {/* Team Member 2 */}
+    <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
+      <img
+        src="/james.png"
+        alt="Team Member"
+        className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-amber-400"
+      />
+      <h3 className="text-xl font-semibold text-gray-800">James Mwangi</h3>
+      <p className="text-sm text-gray-600 mb-2">Strategy & Training Lead</p>
+      <p className="text-gray-700 text-sm">
+        James brings clarity and structure to our programs, with years of experience in leadership development.
+      </p>
+    </div>
+
+    {/* Team Member 3 */}
+    <div className="bg-gray-50 rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
+      <img
+        src="/sarah.png"
+        alt="Team Member"
+        className="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-amber-400"
+      />
+      <h3 className="text-xl font-semibold text-gray-800">Sarah Wambui</h3>
+      <p className="text-sm text-gray-600 mb-2">Programs & Client Success</p>
+      <p className="text-gray-700 text-sm">
+        Sarah ensures every client feels seen, heard, and supported throughout their transformation journey.
+      </p>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Testimonials */}
       <section className=" px-6 max-w-4xl mx-auto text-center">
