@@ -19,8 +19,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_tia28dl', // Service id
-        'template_zuahl21', // Template
+        'service_tia28dl',
+        'template_zuahl21',
         {
           user_name: form.name,
           user_email: form.email,
@@ -28,7 +28,7 @@ const Contact = () => {
           subject: 'New message from Your RkGlobal contact page',
           date: new Date().toLocaleString(),
         },
-        'jwi-Yw1IaHxCQl3JU' // Public API key
+        'jwi-Yw1IaHxCQl3JU'
       )
       .then(() => {
         showSuccessToast('Message sent successfully!');
@@ -44,20 +44,22 @@ const Contact = () => {
     <>
       <ToastContainerWrapper />
 
-      <div className="min-h-screen bg-blue-50 pt-20 pb-10 px-4">
+      <div className="min-h-screen bg-blue-50 dark:bg-gray-900 pt-20 pb-10 px-4 transition-colors">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8">Get in Touch</h2>
+          <h2 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+            Get in Touch
+          </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
-            <div className="bg-white shadow-lg rounded-2xl p-8">
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 transition-colors">
               <h3 className="text-2xl font-semibold text-amber-400 mb-4">Let's Connect!</h3>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Whether you're reaching out for collaboration, questions, feedback, or just to say hi —
                 I’m always happy to hear from you!
               </p>
 
-              <div className="space-y-4 text-gray-800">
+              <div className="space-y-4 text-gray-800 dark:text-gray-200">
                 <div className="flex items-center gap-3">
                   <FaPhoneAlt className="text-amber-400" />
                   <a href="tel:+25475785508" className="hover:underline">
@@ -83,9 +85,9 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-2xl p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 space-y-6 transition-colors">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Name
                 </label>
                 <input
@@ -96,12 +98,12 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Your name"
-                  className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Email
                 </label>
                 <input
@@ -112,12 +114,12 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="you@example.com"
-                  className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   Message
                 </label>
                 <textarea
@@ -128,7 +130,7 @@ const Contact = () => {
                   required
                   rows="4"
                   placeholder="Write your message here..."
-                  className="mt-1 block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 block w-full p-3 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
                 ></textarea>
               </div>
 
