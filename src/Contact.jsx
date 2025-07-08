@@ -41,7 +41,7 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <section id='contact'>
       <ToastContainerWrapper />
 
       <div className="min-h-screen bg-blue-50 dark:bg-gray-900 pt-20 pb-10 px-4 transition-colors">
@@ -144,7 +144,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
