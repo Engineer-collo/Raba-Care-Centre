@@ -23,8 +23,8 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <header className="bg-white shadow-md relative z-50 dark:bg-gray-900">
-      {/* Top Contact Info */}
+<header className="sticky top-0 bg-white shadow-md z-50 dark:bg-gray-900">
+{/* Top Contact Info */}
       <div className="bg-gray-900 text-white text-sm py-1 px-2 dark:bg-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
           {/* Phone */}

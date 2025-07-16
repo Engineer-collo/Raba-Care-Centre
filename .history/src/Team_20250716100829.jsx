@@ -1,12 +1,11 @@
 import React from 'react';
-import { FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const redempta = {
   name: 'Redempta Kanja',
   role: 'Purpose Coach & Speaker | Growth Strategist | Founder, Redempta Kanja Global',
   image: '/redempta-kanja.png',
-  email: 'info@redemptakanjaglobal.com',
-  phone: '+254 757855508',
+  email: 'redempta@rkglobal.com',
+  phone: '+254712345678',
 };
 
 const teamMembers = [
@@ -41,7 +40,7 @@ const Team = () => {
         Behind every transformational experience at RK Global is a powerhouse team committed to excellence, authenticity, and impact.
       </p>
 
-      {/* Redempta First */}
+      {/* Redempta first */}
       <div className="group bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 text-center hover:shadow-xl transition max-w-3xl mx-auto mb-12">
         <img
           src={redempta.image}
@@ -51,28 +50,18 @@ const Team = () => {
         <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">{redempta.name}</h3>
         <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{redempta.role}</p>
         <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-amber-400 p-3 rounded-lg text-white text-sm text-center space-y-2">
-            <a
-              href={`mailto:${redempta.email}`}
-              className="hover:underline flex items-center justify-center gap-2"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaEnvelope /> {redempta.email}
+          <div className="bg-amber-400 p-3 rounded-lg text-white space-y-1 text-sm">
+            <a href={`mailto:${redempta.email}`} className="hover:underline block">
+              {redempta.email}
             </a>
-            <a
-              href={`tel:${redempta.phone}`}
-              className="hover:underline flex items-center justify-center gap-2"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaPhone /> {redempta.phone}
+            <a href={`tel:${redempta.phone}`} className="hover:underline block">
+              {redempta.phone}
             </a>
           </div>
         </div>
       </div>
 
-      {/* Other Team Members */}
+      {/* Rest of team */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {teamMembers.map((member, index) => (
           <div
@@ -87,22 +76,12 @@ const Team = () => {
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{member.name}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{member.role}</p>
             <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-amber-400 p-3 rounded-lg text-white text-sm text-center space-y-2">
-                <a
-                  href={`mailto:${member.email}`}
-                  className="hover:underline flex items-center justify-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaEnvelope /> {member.email}
+              <div className="bg-amber-400 p-3 rounded-lg text-white space-y-1 text-sm">
+                <a href={`mailto:${member.email}`} className="hover:underline block">
+                  {member.email}
                 </a>
-                <a
-                  href={`tel:${member.phone}`}
-                  className="hover:underline flex items-center justify-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaPhone /> {member.phone}
+                <a href={`tel:${member.phone}`} className="hover:underline block">
+                  {member.phone}
                 </a>
               </div>
             </div>

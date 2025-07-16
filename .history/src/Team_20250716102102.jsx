@@ -5,8 +5,8 @@ const redempta = {
   name: 'Redempta Kanja',
   role: 'Purpose Coach & Speaker | Growth Strategist | Founder, Redempta Kanja Global',
   image: '/redempta-kanja.png',
-  email: 'info@redemptakanjaglobal.com',
-  phone: '+254 757855508',
+  email: '',
+  phone: '+254712345678',
 };
 
 const teamMembers = [

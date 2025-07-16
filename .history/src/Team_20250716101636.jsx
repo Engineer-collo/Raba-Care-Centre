@@ -1,12 +1,11 @@
 import React from 'react';
-import { FaEnvelope, FaPhone } from 'react-icons/fa';
 
 const redempta = {
   name: 'Redempta Kanja',
   role: 'Purpose Coach & Speaker | Growth Strategist | Founder, Redempta Kanja Global',
   image: '/redempta-kanja.png',
-  email: 'info@redemptakanjaglobal.com',
-  phone: '+254 757855508',
+  email: 'redempta@rkglobal.com',
+  phone: '+254712345678',
 };
 
 const teamMembers = [
@@ -51,22 +50,22 @@ const Team = () => {
         <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">{redempta.name}</h3>
         <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{redempta.role}</p>
         <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-amber-400 p-3 rounded-lg text-white text-sm text-center space-y-2">
+          <div className="bg-amber-400 p-3 rounded-lg text-white space-y-1 text-sm">
             <a
               href={`mailto:${redempta.email}`}
-              className="hover:underline flex items-center justify-center gap-2"
+              className="hover:underline block"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaEnvelope /> {redempta.email}
+              {redempta.email}
             </a>
             <a
               href={`tel:${redempta.phone}`}
-              className="hover:underline flex items-center justify-center gap-2"
+              className="hover:underline block"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaPhone /> {redempta.phone}
+              {redempta.phone}
             </a>
           </div>
         </div>
@@ -87,22 +86,22 @@ const Team = () => {
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{member.name}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{member.role}</p>
             <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-amber-400 p-3 rounded-lg text-white text-sm text-center space-y-2">
+              <div className="bg-amber-400 p-3 rounded-lg text-white space-y-1 text-sm">
                 <a
                   href={`mailto:${member.email}`}
-                  className="hover:underline flex items-center justify-center gap-2"
+                  className="hover:underline block"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaEnvelope /> {member.email}
+                  {member.email}
                 </a>
                 <a
                   href={`tel:${member.phone}`}
-                  className="hover:underline flex items-center justify-center gap-2"
+                  className="hover:underline block"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaPhone /> {member.phone}
+                  {member.phone}
                 </a>
               </div>
             </div>

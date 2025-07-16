@@ -6,7 +6,7 @@ const redempta = {
   role: 'Purpose Coach & Speaker | Growth Strategist | Founder, Redempta Kanja Global',
   image: '/redempta-kanja.png',
   email: 'info@redemptakanjaglobal.com',
-  phone: '+254 757855508',
+  phone: '+254712345678',
 };
 
 const teamMembers = [

@@ -136,17 +136,17 @@ const Footer = () => {
 
       {/* Footer bottom */}
       <div className="mt-10 text-center text-gray-400 dark:text-gray-500">
-  © {new Date().getFullYear()} RK-Globals. All rights reserved. <br />
-  This Website was Built with ❤️ by{' '}
-  <a
-    href="https://portfolio-five-beta-49.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-amber-400 font-semibold hover:text-white"
-  >
-    Engineer Collins
-  </a>
-</div>
+        © 2025 Rk-Globals. All rights reserved. <br />
+        This Website was Built with ❤️ by{' '}
+        <a
+          href="https://portfolio-five-beta-49.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-amber-400 font-semibold hover:text-white"
+        >
+          Engineer Collins
+        </a>
+      </div>
     </footer>
   );
 };
