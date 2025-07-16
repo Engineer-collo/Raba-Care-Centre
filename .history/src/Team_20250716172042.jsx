@@ -26,7 +26,7 @@ const teamMembers = [
   },
   {
     name: 'Velma Adhiambo',
-    role: 'Strategic Consultant, RK Global | International Development & Trade Expert | Founder, Greater Works Book Club',
+    role: '',
     image: '/velma_adhiambo.png',
     email: 'velma@rkglobal.com',
     phone: '+254789456123',
