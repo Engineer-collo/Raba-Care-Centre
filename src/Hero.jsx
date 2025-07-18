@@ -4,41 +4,22 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center text-white bg-black overflow-hidden px-4 sm:px-6"
+      className=" scroll-mt-20 relative h-[85vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 text-white bg-cover bg-center"
+      style={{ backgroundImage: "url('/photo.png')" }}
     >
-      {/* Background Image */}
-      <img
-        src="/photo.png"
-        alt="Redempta Kanja Global"
-        className="absolute inset-0 w-full h-full object-cover brightness-110 z-0"
-      />
-
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70 z-0" />
+      <div className="absolute inset-0 bg-amber-700 bg-opacity-80 z-0" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl w-full text-center space-y-6 py-16 sm:py-24 md:py-32">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-amber-400 drop-shadow">
-          Welcome to Redempta Kanja Global
+      {/* Text Section */}
+      <div className="w-full md:w-1/2 text-left space-y-6 py-10 relative z-10">
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          Let's Transform Your Life<br />
+          With <span className="text-amber-400">Personalized Coaching Sessions</span>.
         </h1>
-
-        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed bg-black/30 dark:bg-white/10 p-4 sm:p-6 rounded-xl shadow-lg mx-auto max-w-3xl">
-          <strong className="block mb-2">
-            Empowering individuals, teams, and organizations to unlock purpose, shift mindsets, and maximize potential.
-          </strong>
-          At RK Global, we help you move from <em>confusion to clarity</em> and from <em>survival to significance</em> through tailored coaching, transformative training, and intentional mentorship.
-          <br /><br />
-          Whether through one-on-one sessions, group workshops, dynamic seminars, power talks, or team-building experiences — we develop the whole person: <strong>mindset, skills, spirit, and strategy</strong>.
-          <br /><br />
-          <q className="italic block text-amber-300">
-            Your level of success will rarely exceed your level of personal development.
-          </q>
-          <br />
-          We equip you to take full ownership of your growth journey and achieve measurable transformation: enhanced performance, greater resilience, lasting joy, and meaningful impact.
-          <br /><br />
-          Growth starts with one courageous step. Are you ready?
+        <p className="text-lg text-gray-200">
+          Learn proven tactics, master the mindset, and get real results. Whether it’s achieving your goals,
+          gaining confidence, or finding fulfillment — you’re in the right place.
         </p>
-
         <a
           href="#book"
           className="inline-block bg-amber-400 hover:bg-amber-500 text-black font-semibold px-6 py-3 rounded-full shadow-md transition duration-300"

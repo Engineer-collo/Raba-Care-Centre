@@ -2,7 +2,7 @@ import React from 'react';
 
 const BooksSection = () => {
   return (
-    <section id="products" className="py-12 px-6 max-w-6xl mx-auto text-center bg-gray-50 dark:bg-gray-900">
+    <section id="products" className="scroll-mt-20 py-12 px-6 max-w-6xl mx-auto text-center bg-gray-50 dark:bg-gray-900">
       <h2 className="text-4xl font-bold mb-12 text-gray-800 dark:text-white">Books by Redempta Kanja</h2>
       <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto pb-12">
         Each of these books is a movement — a bold call to rise, reclaim your identity, unlock your purpose, and take

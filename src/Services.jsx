@@ -11,7 +11,7 @@ const serviceImages = [
 
 const Services = () => {
   return (
-    <section id="services" className="bg-gray-100 dark:bg-gray-900 py-16 px-6">
+    <section id="services" className="scroll-mt-20 bg-gray-100 dark:bg-gray-900 py-16 px-6">
       <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
         What We Offer
       </h2>

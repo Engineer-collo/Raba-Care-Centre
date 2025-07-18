@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const blogData = [
@@ -36,38 +36,59 @@ const blogData = [
 
 const BlogCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [animate, setAnimate] = useState(false);
   const total = blogData.length;
 
-  const prevBlog = () => {
-    setCurrentIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+  const nextBlog = () => {
+    setAnimate(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % total);
+      setAnimate(false);
+    }, 300); // match animation duration
   };
 
-  const nextBlog = () => {
-    setCurrentIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+  const prevBlog = () => {
+    setAnimate(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + total) % total);
+      setAnimate(false);
+    }, 300);
   };
+
+  // Auto-slide
+  useEffect(() => {
+    const interval = setInterval(nextBlog, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   const { title, summary, image } = blogData[currentIndex];
 
   return (
-    <section id="blog" className="py-16 px-6 bg-indigo-50 dark:bg-gray-900">
+    <section id="blog" className="scroll-mt-20 py-16 px-6 bg-indigo-50 dark:bg-gray-900">
       <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         From the Blog
       </h2>
 
       <div className="relative max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-md overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-64 object-cover object-center"
-        />
+        <div
+          className={`transition-transform duration-300 ease-in-out ${
+            animate ? "translate-x-10 opacity-0" : "translate-x-0 opacity-100"
+          }`}
+        >
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-64 object-cover object-center"
+          />
 
-        <div className="p-6 text-center">
-          <h3 className="text-2xl font-semibold mb-3 text-gray-800 dark:text-amber-400">
-            {title}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-            {summary}
-          </p>
+          <div className="p-6 text-center">
+            <h3 className="text-2xl font-semibold mb-3 text-gray-800 dark:text-amber-400">
+              {title}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+              {summary}
+            </p>
+          </div>
         </div>
 
         {/* Arrows */}

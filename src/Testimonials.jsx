@@ -31,7 +31,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="bg-white dark:bg-black py-20 px-6 max-w-6xl mx-auto">
+    <section className="scroll-mt-20 bg-white dark:bg-black py-20 px-6 max-w-6xl mx-auto">
       <h2 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">
         💬 Our Clients Reviews
       </h2>

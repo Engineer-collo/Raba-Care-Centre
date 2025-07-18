@@ -12,6 +12,7 @@ import {
   FaBoxOpen,
   FaUsers,
   FaUser,
+  FaQuoteLeft,
 } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-<header className="sticky top-0 bg-white shadow-md z-50 dark:bg-gray-900">
+<header className=" sticky top-0 bg-white shadow-md z-50 dark:bg-gray-900">
 {/* Top Contact Info */}
       <div className="bg-gray-900 text-white text-sm py-1 px-2 dark:bg-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
@@ -89,8 +90,13 @@ const Navbar = () => {
           </a>
           <a href="#team" className="hover:text-amber-600 flex flex-col items-center">
             <FaUsers className="text-gray-500 text-2xl" />
-            Our Team
+            Team
           </a>
+          <a href="#inspiration" className="hover:text-amber-600 flex flex-col items-center">
+          <FaQuoteLeft className="text-gray-500 text-2xl" />
+           Inspiration
+           </a>
+
           <a
             href="#book"
             className="ml-12 bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
@@ -137,6 +143,10 @@ const Navbar = () => {
             <a href="#team" className="flex items-center gap-2 hover:text-blue-900">
               <FaUsers /> Team
             </a>
+            <a href="#inspiration" className="flex items-center gap-2 hover:text-blue-900">
+            <FaQuoteLeft />
+             Inspiration
+          </a>
             <a
               href="#book"
               className="block mt-4 bg-white text-center py-2 rounded-lg text-amber-400 hover:bg-amber-600"

@@ -4,7 +4,7 @@ import { faGlobe, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
   return (
-    <section id="about" className="py-16 px-6 max-w-5xl mx-auto">
+    <section id="about" className="scroll-mt-20 pt-12 py-16 px-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-bold mb-4 text-center text-gray-900 dark:text-white">
         About Rk Global
       </h2>
