@@ -7,7 +7,7 @@ const Subscribe = () => {
   const [emails, setEmails] = useState([]);
 
   const fetchEmails = () => {
-    fetch('https://redempta-website-s-backend.onrender.com/api/subscribe')
+    fetch('https://redempta-website-s-backend.onrender.com/subscribe')
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setEmails(data);

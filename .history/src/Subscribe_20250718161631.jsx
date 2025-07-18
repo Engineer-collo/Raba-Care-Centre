@@ -7,7 +7,7 @@ const Subscribe = () => {
   const [emails, setEmails] = useState([]);
 
   const fetchEmails = () => {
-    fetch('https://redempta-website-s-backend.onrender.com/api/subscribe')
+    fetch('http://127.0.0.1:8000/api/subscribe')
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setEmails(data);
@@ -28,7 +28,7 @@ const Subscribe = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://redempta-website-s-backend.onrender.com/api/subscribe', {
+      const response = await fetch('https://redempta-website-s-backend.onrender.com//subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
