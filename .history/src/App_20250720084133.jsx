@@ -12,7 +12,6 @@ import Contact from './Contact';
 import Footer from './Footer';
 import DailyInspiration from './DailyInspiration';
 import Subscribe from './Subscribe';
-import WhatsAppButton from './WhatsAppButton'
 
 // Import ToastContainerWrapper
 import { ToastContainerWrapper } from './Toast';
@@ -33,7 +32,6 @@ const HomePage = () => {
       <Contact />
       <Subscribe />
       <Footer />
-      <WhatsAppButton />
       
       {/* Toast Container - Must be outside all pages/components that use toast */}
       <ToastContainerWrapper />

@@ -33,7 +33,7 @@ const HomePage = () => {
       <Contact />
       <Subscribe />
       <Footer />
-      <WhatsAppButton />
+      </>
       
       {/* Toast Container - Must be outside all pages/components that use toast */}
       <ToastContainerWrapper />
