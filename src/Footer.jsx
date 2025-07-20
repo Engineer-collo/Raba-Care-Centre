@@ -24,7 +24,7 @@ const Footer = () => {
           to="/feedback"
           className="hover:text-amber-400 flex items-center gap-2 text-sm"
         >
-          <FaInfoCircle className="text-xl text-gray-300" />
+          <FaInfoCircle className=" text-xl text-red-500" />
           Your Feedback
         </Link>
       </div>
