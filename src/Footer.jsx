@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaHome,
   FaInfoCircle,
@@ -16,7 +17,18 @@ import { SiTiktok } from 'react-icons/si';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white dark:bg-black py-10 px-6 text-sm">
+    <footer className="bg-gray-900 text-white dark:bg-black py-10 px-6 text-sm relative">
+      {/* Feedback link in top-right */}
+      <div className="absolute top-4 right-4">
+        <Link
+          to="/feedback"
+          className="hover:text-amber-400 flex items-center gap-2 text-sm"
+        >
+          <FaInfoCircle className="text-xl text-gray-300" />
+          Your Feedback
+        </Link>
+      </div>
+
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
         {/* Quick Links */}
         <div>
@@ -136,17 +148,17 @@ const Footer = () => {
 
       {/* Footer bottom */}
       <div className="mt-10 text-center text-gray-400 dark:text-gray-500">
-  © {new Date().getFullYear()} RK-Globals. All rights reserved. <br />
-  This Website was Built with ❤️ by{' '}
-  <a
-    href="https://portfolio-five-beta-49.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-amber-400 font-semibold hover:text-white"
-  >
-    Engineer Collins
-  </a>
-</div>
+        © {new Date().getFullYear()} RK-Globals. All rights reserved. <br />
+        This Website was Built with ❤️ by{' '}
+        <a
+          href="https://portfolio-five-beta-49.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-amber-400 font-semibold hover:text-white"
+        >
+          Engineer Collins
+        </a>
+      </div>
     </footer>
   );
 };
