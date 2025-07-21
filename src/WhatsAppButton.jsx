@@ -3,8 +3,8 @@ import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '254757855508'; // Replace with your actual phone number (in international format)
-  const message = 'Hello! I visited your site Rk Global and would like to talk to you.';
+  const phoneNumber = '254757855508'; 
+  const message = 'Hello! I visited your site Redempta Kanja Global and would like to talk to you.';
 
   return (
     <a
@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FaWhatsapp className="text-2xl" />
+      <FaWhatsapp />
     </a>
   );
 };
