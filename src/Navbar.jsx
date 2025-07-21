@@ -56,12 +56,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Right side: Mobile Hamburger & DarkModeToggle */}
+        {/* Right side: Mobile Hamburger & DarkMode toggle */}
         <div className="flex flex-col items-end gap-2 md:hidden">
-          <button onClick={toggleMenu}>
+          <div onClick={toggleMenu}>
             {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-          </button>
-          {/* Dark Mode Toggle below hamburger icon */}
+          </div>
           <DarkModeToggle />
         </div>
 
