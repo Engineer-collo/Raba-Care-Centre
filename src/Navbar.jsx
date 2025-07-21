@@ -47,21 +47,31 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-start md:items-center">
-        {/* Left side: Logo */}
-        <div className="flex items-center gap-1 px-1">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-start md:items-center">
+        {/* Mobile Top Row: Logo + Name + Hamburger */}
+        <div className="w-full flex justify-between items-center md:hidden">
+          <div className="flex items-center gap-2">
+            <img className="h-6 w-8 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
+            <div className="text-lg font-bold text-amber-400 hover:text-amber-600">
+              Redempta Kanja Global
+            </div>
+          </div>
+          <button onClick={toggleMenu}>
+            {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+          </button>
+        </div>
+
+        {/* Mobile: Dark Mode Toggle below logo/hamburger */}
+        <div className="mt-2 self-end md:hidden">
+          <DarkModeToggle />
+        </div>
+
+        {/* Desktop: Logo and DarkModeToggle inline */}
+        <div className="hidden md:flex items-center gap-3 px-2">
           <img className="h-6 w-8 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
           <div className="text-xl font-bold text-amber-400 hover:text-amber-600">
             Redempta Kanja Global
           </div>
-        </div>
-
-        {/* Right side: Mobile Hamburger & DarkMode toggle */}
-        <div className="flex flex-col items-end gap-2 md:hidden">
-          <div onClick={toggleMenu}>
-            {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-          </div>
-          <DarkModeToggle />
         </div>
 
         {/* Desktop Nav */}
