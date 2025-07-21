@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
           <div className="flex items-center gap-1">
             <FaPhone className="text-white" />
-            <a href="tel:+254757855508" className="hover:underline">
+            <a href="tel:+254757855508" className="text-semi-bold italic hover:underline">
               +254 757 855 508
             </a>
           </div>
@@ -38,7 +38,7 @@ const Navbar = () => {
             <FaEnvelope className="text-white" />
             <a
               href="mailto:info@redemptakanjaglobal.com"
-              className="hover:underline"
+              className="text-semi-bold italic hover:underline"
             >
               info@redemptakanjaglobal.com
             </a>
@@ -49,8 +49,8 @@ const Navbar = () => {
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-start md:items-center">
         {/* Left side: Logo */}
-        <div className="flex items-center gap-3 px-2">
-          <img className="h-8 w-10 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
+        <div className="flex items-center gap-1 px-1">
+          <img className="h-6 w-8 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
           <div className="text-xl font-bold text-amber-400 hover:text-amber-600">
             Redempta Kanja Global
           </div>
