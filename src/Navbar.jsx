@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* Mobile Top Row: Logo + Name + Hamburger */}
         <div className="w-full flex justify-between items-center md:hidden">
           <div className="flex items-center gap-2">
-            <img className="h-6 w-8 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
+            <img className="h-12 w-10 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
             <div className="text-lg font-bold text-amber-400 hover:text-amber-600">
               Redempta Kanja Global
             </div>
