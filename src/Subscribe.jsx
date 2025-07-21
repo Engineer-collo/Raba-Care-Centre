@@ -51,12 +51,12 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 md:p-10 max-w-2xl mx-auto transition-colors duration-300">
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-2">
+    <div className=" mt-6 mb-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 md:p-10 max-w-2xl mx-auto transition-colors duration-300">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
         Stay Updated
       </h2>
       <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base mb-6">
-        Join <span className="text-amber-400 font-semibold">{emails.length}</span> others and never miss a thing!
+        Join <span className="p-2 rounded-full bg-amber-400 text-black font-semibold">{emails.length}</span> others and never miss a thing!
       </p>
 
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-4">
