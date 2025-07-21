@@ -56,9 +56,6 @@ const FeedbackForm = () => {
         Thank you for visiting our website! Your experience matters to us, and we are always looking for ways to improve.
         Please take a moment to share your thoughts — let us know what you liked, any challenges you faced while navigating the site, and suggestions on how we can make your visit even better.
       </p>
-      <p className="text-sm text-gray-500 dark:text-gray-400 italic text-center mb-6">
-        Fields marked with <span className="text-red-500">*</span> are mandatory.
-      </p>
 
       {submitted ? (
         <>
@@ -78,6 +75,10 @@ const FeedbackForm = () => {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 italic mt-6  mb-1">
+        Fields marked with <span className="text-red-500">*</span> are mandatory.
+      </p>
+
             <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
               Name <span className="text-red-500">*</span>
             </label>
@@ -156,7 +157,7 @@ const FeedbackForm = () => {
           <div className="text-center space-x-4">
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl transition-all duration-300"
             >
               Submit Feedback
             </button>
@@ -164,7 +165,7 @@ const FeedbackForm = () => {
             <button
               type="button"
               onClick={() => navigate('/')}
-              className="bg-amber-400 hover:bg-amber-500 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-all duration-300"
+              className="bg-amber-400 hover:bg-amber-500 text-gray-800 font-semibold py-2 px-6 rounded-xl transition-all duration-300"
             >
               Back to Home
             </button>
