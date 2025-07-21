@@ -157,7 +157,7 @@ const FeedbackForm = () => {
           <div className="text-center space-x-4">
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-xl transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition-all duration-300"
             >
               Submit Feedback
             </button>
@@ -165,7 +165,7 @@ const FeedbackForm = () => {
             <button
               type="button"
               onClick={() => navigate('/')}
-              className="bg-amber-400 hover:bg-amber-500 text-gray-800 font-semibold py-2 px-6 rounded-xl transition-all duration-300"
+              className="bg-amber-400 hover:bg-amber-500 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-all duration-300"
             >
               Back to Home
             </button>
