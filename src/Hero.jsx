@@ -13,7 +13,7 @@ const Hero = () => {
       {/* Text Section */}
       <div className="w-full md:w-1/2 text-left space-y-6 py-10 relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Let's Transform Your Life<br />
+          Let's Transform <br />Your Life<br />
           With <span className="text-amber-400">Personalized Coaching Sessions</span>.
         </h1>
         <p className="text-lg text-gray-200">

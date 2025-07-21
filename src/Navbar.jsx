@@ -24,18 +24,16 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-<header className=" sticky top-0 bg-white shadow-md z-50 dark:bg-gray-900">
-{/* Top Contact Info */}
+    <header className="sticky top-0 bg-white shadow-md z-50 dark:bg-gray-900">
+      {/* Top Contact Info */}
       <div className="bg-gray-900 text-white text-sm py-1 px-2 dark:bg-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
-          {/* Phone */}
           <div className="flex items-center gap-1">
             <FaPhone className="text-white" />
             <a href="tel:+254757855508" className="hover:underline">
               +254 757 855 508
             </a>
           </div>
-          {/* Email */}
           <div className="flex items-center gap-1">
             <FaEnvelope className="text-white" />
             <a
@@ -49,17 +47,22 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo & Dark Mode Toggle (Mobile) */}
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-start md:items-center">
+        {/* Left side: Logo */}
         <div className="flex items-center gap-3 px-2">
           <img className="h-8 w-10 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
           <div className="text-xl font-bold text-amber-400 hover:text-amber-600">
-            RK GLOBAL
+            Redempta Kanja Global
           </div>
-          {/* Dark mode toggle visible on mobile */}
-          <span className="ml-2 block md:hidden">
-            <DarkModeToggle />
-          </span>
+        </div>
+
+        {/* Right side: Mobile Hamburger & DarkModeToggle */}
+        <div className="flex flex-col items-end gap-2 md:hidden">
+          <button onClick={toggleMenu}>
+            {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+          </button>
+          {/* Dark Mode Toggle below hamburger icon */}
+          <DarkModeToggle />
         </div>
 
         {/* Desktop Nav */}
@@ -93,26 +96,21 @@ const Navbar = () => {
             Team
           </a>
           <a href="#inspiration" className="hover:text-amber-600 flex flex-col items-center">
-          <FaQuoteLeft className="text-gray-500 text-2xl" />
-           Inspiration
-           </a>
-
+            <FaQuoteLeft className="text-gray-500 text-2xl" />
+            Inspiration
+          </a>
           <a
             href="#book"
             className="ml-12 bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
           >
             Book a Session
           </a>
+
           {/* Desktop Dark Mode Toggle */}
           <span className="ml-2">
             <DarkModeToggle />
           </span>
         </nav>
-
-        {/* Hamburger Icon */}
-        <div className="md:hidden" onClick={toggleMenu}>
-          {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -144,9 +142,8 @@ const Navbar = () => {
               <FaUsers /> Team
             </a>
             <a href="#inspiration" className="flex items-center gap-2 hover:text-blue-900">
-            <FaQuoteLeft />
-             Inspiration
-          </a>
+              <FaQuoteLeft /> Inspiration
+            </a>
             <a
               href="#book"
               className="block mt-4 bg-white text-center py-2 rounded-lg text-amber-400 hover:bg-amber-600"
