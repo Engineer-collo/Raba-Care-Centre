@@ -156,7 +156,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className="text-amber-400 font-semibold hover:text-white"
         >
-          Engineer Collins
+          Eng. Collins
         </a>
       </div>
     </footer>
