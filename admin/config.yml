@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main  # or "master" depending on your repo
+
+media_folder: "public"       # where uploaded images are stored (in your case, directly in public/)
+public_folder: "/"           # how the images are accessed in your code
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/content/home.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "About Page"
+        name: "about"
+        file: "src/content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Services Page"
+        name: "services"
+        file: "src/content/services.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/content/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
