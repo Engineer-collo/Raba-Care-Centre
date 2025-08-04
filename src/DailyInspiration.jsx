@@ -1,31 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-const quotes = [
+const fallbackQuotes = [
   {
-    quote: "You are destined for greatness! Don't let your circumstances lead to self-sabotage.",
-    author: "Redempta Kanja",
+    testimonial_text: "You are destined for greatness! Don't let your circumstances lead to self-sabotage.",
+    testimony_author: "Redempta Kanja",
   },
   {
-    quote: "Learn to walk away from those who dim your light... seek environments that inspire your dreams.",
-    author: "Redempta Kanja",
+    testimonial_text: "Learn to walk away from those who dim your light... seek environments that inspire your dreams.",
+    testimony_author: "Redempta Kanja",
   },
   {
-    quote: "Your level of success will rarely exceed your level of personal development.",
-    author: "Hal Elrod",
+    testimonial_text: "Your level of success will rarely exceed your level of personal development.",
+    testimony_author: "Hal Elrod",
   },
 ];
 
 const DailyInspiration = () => {
+  const [quotes, setQuotes] = useState(fallbackQuotes);
   const [index, setIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const fetchQuotes = async () => {
+      try {
+        const res = await fetch('http://127.0.0.1:8000/api/testimonials');
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setQuotes(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch testimonials, using fallback quotes.", error);
+      }
+    };
+
+    fetchQuotes();
+  }, []);
 
   const nextQuote = () => {
     setAnimate(true);
     setTimeout(() => {
       setIndex((prev) => (prev + 1) % quotes.length);
       setAnimate(false);
-    }, 300); // matches the duration of the animation
+    }, 300);
   };
 
   const prevQuote = () => {
@@ -37,9 +54,9 @@ const DailyInspiration = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextQuote, 6000); // auto change every 6s
+    const interval = setInterval(nextQuote, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [quotes]);
 
   return (
     <section id='inspiration' className='scroll-mt-24'>
@@ -51,8 +68,12 @@ const DailyInspiration = () => {
             animate ? 'translate-x-10 opacity-0' : 'translate-x-0 opacity-100'
           }`}
         >
-          <p className="text-lg italic text-gray-800 dark:text-gray-200">“{quotes[index].quote}”</p>
-          <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-400">— {quotes[index].author}</p>
+          <p className="text-lg italic text-gray-800 dark:text-gray-200">
+            “{quotes[index]?.testimonial_text || "Stay inspired!"}”
+          </p>
+          <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+            — {quotes[index]?.testimony_author || "Redempta Kanja"}
+          </p>
         </div>
 
         <div className="mt-6 flex justify-center space-x-6">

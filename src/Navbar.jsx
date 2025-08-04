@@ -1,27 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import DarkModeToggle from './DarkModeToggle';
 import {
-  FaBars,
-  FaTimes,
-  FaPhone,
-  FaEnvelope,
-  FaHome,
-  FaInfoCircle,
-  FaBriefcase,
-  FaBlog,
-  FaBoxOpen,
-  FaUsers,
-  FaUser,
-  FaQuoteLeft,
+  FaBars, FaTimes, FaPhone, FaEnvelope,
+  FaHome, FaInfoCircle, FaBriefcase, FaBlog,
+  FaBoxOpen, FaUsers, FaUser, FaQuoteLeft
 } from 'react-icons/fa';
+
+const defaultNavbarData = {
+  site_name: 'Redempta Kanja Global',
+  email: 'info@redemptakanjaglobal.com',
+  phone: '0757855508',
+  book_button_text: 'Book a Session',
+  book_button_link: '#book',
+};
+
+const defaultLogoUrl = '/rk-logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [navbarData, setNavbarData] = useState(defaultNavbarData);
+  const [logoUrl, setLogoUrl] = useState(defaultLogoUrl);
+
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
   }, [isOpen]);
+
+  useEffect(() => {
+    // Fetch navbar data
+    const fetchNavbar = async () => {
+      try {
+        const res = await fetch('http://127.0.0.1:8000/api/navbars');
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setNavbarData({
+            ...defaultNavbarData,
+            ...data[0],
+          });
+        } else {
+          console.warn('Invalid navbar data:', data);
+        }
+      } catch (err) {
+        console.error('Failed to fetch navbar:', err);
+      }
+    };
+
+    // Fetch logo data separately
+    const fetchLogo = async () => {
+      try {
+        const res = await fetch('http://127.0.0.1:8000/api/logos');
+        const data = await res.json();
+        console.log('Fetched logo data:', data); // Logs the full array
+    
+        if (Array.isArray(data) && data.length > 0 && data[0].logo_url) {
+          console.log('Fetched logo URL:', data[0].logo_url); 
+          setLogoUrl(data[0].logo_url);
+        } else {
+          console.warn('Logo data is empty or invalid:', data);
+        }
+      } catch (err) {
+        console.error('Failed to fetch logo:', err);
+        setLogoUrl(defaultLogoUrl); // fallback to default
+      }
+    };
+        
+    fetchNavbar();
+    fetchLogo();
+  }, []);
 
   return (
     <header className="sticky top-0 bg-white shadow-md z-50 dark:bg-gray-900">
@@ -30,17 +77,14 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
           <div className="flex items-center gap-1">
             <FaPhone className="text-white" />
-            <a href="tel:+254757855508" className="text-semi-bold italic hover:underline">
-              +254 757 855 508
+            <a href={`tel:${navbarData.phone}`} className="italic hover:underline">
+              {navbarData.phone}
             </a>
           </div>
           <div className="flex items-center gap-1">
             <FaEnvelope className="text-white" />
-            <a
-              href="mailto:info@redemptakanjaglobal.com"
-              className="text-semi-bold italic hover:underline"
-            >
-              info@redemptakanjaglobal.com
+            <a href={`mailto:${navbarData.email}`} className="italic hover:underline">
+              {navbarData.email}
             </a>
           </div>
         </div>
@@ -48,12 +92,17 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-start md:items-center">
-        {/* Mobile Top Row: Logo + Name + Hamburger */}
+        {/* Mobile Top Row */}
         <div className="w-full flex justify-between items-center md:hidden">
           <div className="flex items-center gap-2">
-            <img className="h-12 w-10 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
+            <img
+              className="h-12 w-10 object-contain"
+              src={logoUrl}
+              alt="Logo"
+              onError={(e) => { e.target.src = defaultLogoUrl; }}
+            />
             <div className="text-lg font-bold text-amber-400 hover:text-amber-600">
-              Redempta Kanja Global
+              {navbarData.site_name}
             </div>
           </div>
           <button onClick={toggleMenu}>
@@ -61,61 +110,53 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile: Dark Mode Toggle below logo/hamburger */}
+        {/* Mobile: Dark Mode Toggle */}
         <div className="mt-2 self-end md:hidden">
           <DarkModeToggle />
         </div>
 
-        {/* Desktop: Logo and DarkModeToggle inline */}
+        {/* Desktop: Logo & Site Name */}
         <div className="hidden md:flex items-center gap-3 px-2">
-          <img className="h-6 w-8 object-contain" src="/rk-logo.png" alt="Rk-Logo" />
+          <img
+            className="h-6 w-8 object-contain"
+            src={logoUrl}
+            alt="Logo"
+            onError={(e) => { e.target.src = defaultLogoUrl; }}
+          />
           <div className="text-xl font-bold text-amber-400 hover:text-amber-600">
-            Redempta Kanja Global
+            {navbarData.site_name}
           </div>
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 items-center text-sm font-medium">
-          <a href="#home" className="hover:text-amber-600 flex flex-col items-center">
-            <FaHome className="text-gray-500 text-2xl" />
-            Home
-          </a>
-          <a href="#about" className="hover:text-amber-600 flex flex-col items-center">
-            <FaInfoCircle className="text-gray-500 text-2xl" />
-            About
-          </a>
-          <a href="#services" className="hover:text-amber-600 flex flex-col items-center">
-            <FaBriefcase className="text-gray-500 text-2xl" />
-            Services
-          </a>
-          <a href="#blog" className="hover:text-amber-600 flex flex-col items-center">
-            <FaBlog className="text-gray-500 text-2xl" />
-            Blog
-          </a>
-          <a href="#contact" className="hover:text-amber-600 flex flex-col items-center">
-            <FaEnvelope className="text-gray-500 text-2xl" />
-            Contact
-          </a>
-          <a href="#products" className="hover:text-amber-600 flex flex-col items-center">
-            <FaBoxOpen className="text-gray-500 text-2xl" />
-            Products
-          </a>
-          <a href="#team" className="hover:text-amber-600 flex flex-col items-center">
-            <FaUsers className="text-gray-500 text-2xl" />
-            Team
-          </a>
-          <a href="#inspiration" className="hover:text-amber-600 flex flex-col items-center">
-            <FaQuoteLeft className="text-gray-500 text-2xl" />
-            Inspiration
-          </a>
+          {[
+            { id: 'home', label: 'Home', icon: <FaHome /> },
+            { id: 'about', label: 'About', icon: <FaInfoCircle /> },
+            { id: 'services', label: 'Services', icon: <FaBriefcase /> },
+            { id: 'blog', label: 'Blog', icon: <FaBlog /> },
+            { id: 'contact', label: 'Contact', icon: <FaEnvelope /> },
+            { id: 'products', label: 'Products', icon: <FaBoxOpen /> },
+            { id: 'team', label: 'Team', icon: <FaUsers /> },
+            { id: 'inspiration', label: 'Inspiration', icon: <FaQuoteLeft /> },
+          ].map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="hover:text-amber-600 flex flex-col items-center"
+            >
+              <span className="text-gray-500 text-2xl">{item.icon}</span>
+              {item.label}
+            </a>
+          ))}
+
           <a
-            href="#book"
+            href={navbarData.book_button_link || '#'}
             className="ml-12 bg-amber-400 text-white px-4 py-2 rounded-lg hover:bg-amber-600"
           >
-            Book a Session
+            {navbarData.book_button_text}
           </a>
 
-          {/* Desktop Dark Mode Toggle */}
           <span className="ml-2">
             <DarkModeToggle />
           </span>
@@ -129,35 +170,29 @@ const Navbar = () => {
           onClick={toggleMenu}
         >
           <nav className="space-y-6 mt-10 text-lg">
-            <a href="#home" className="flex items-center gap-2 hover:text-blue-900">
-              <FaHome /> Home
-            </a>
-            <a href="#about" className="flex items-center gap-2 hover:text-blue-900">
-              <FaUser /> About
-            </a>
-            <a href="#services" className="flex items-center gap-2 hover:text-blue-900">
-              <FaBriefcase /> Services
-            </a>
-            <a href="#blog" className="flex items-center gap-2 hover:text-blue-900">
-              <FaBlog /> Blog
-            </a>
-            <a href="#contact" className="flex items-center gap-2 hover:text-blue-900">
-              <FaEnvelope /> Contact
-            </a>
-            <a href="#products" className="flex items-center gap-2 hover:text-blue-900">
-              <FaBoxOpen /> Products
-            </a>
-            <a href="#team" className="flex items-center gap-2 hover:text-blue-900">
-              <FaUsers /> Team
-            </a>
-            <a href="#inspiration" className="flex items-center gap-2 hover:text-blue-900">
-              <FaQuoteLeft /> Inspiration
-            </a>
+            {[
+              { id: 'home', label: 'Home', icon: <FaHome /> },
+              { id: 'about', label: 'About', icon: <FaUser /> },
+              { id: 'services', label: 'Services', icon: <FaBriefcase /> },
+              { id: 'blog', label: 'Blog', icon: <FaBlog /> },
+              { id: 'contact', label: 'Contact', icon: <FaEnvelope /> },
+              { id: 'products', label: 'Products', icon: <FaBoxOpen /> },
+              { id: 'team', label: 'Team', icon: <FaUsers /> },
+              { id: 'inspiration', label: 'Inspiration', icon: <FaQuoteLeft /> },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="flex items-center gap-2 hover:text-blue-900"
+              >
+                {item.icon} {item.label}
+              </a>
+            ))}
             <a
-              href="#book"
+              href={navbarData.book_button_link || '#'}
               className="block mt-4 bg-white text-center py-2 rounded-lg text-amber-400 hover:bg-amber-600"
             >
-              Book a Session
+              {navbarData.book_button_text}
             </a>
           </nav>
         </div>

@@ -13,7 +13,10 @@ import Footer from './Footer';
 import DailyInspiration from './DailyInspiration';
 import Subscribe from './Subscribe';
 import WhatsAppButton from './WhatsAppButton';
-import { ToastContainerWrapper } from './Toast';
+
+
+
+
 
 const HomePage = () => {
   return (
@@ -32,7 +35,6 @@ const HomePage = () => {
       <Subscribe />
       <Footer />
       <WhatsAppButton />
-      <ToastContainerWrapper />
     </>
   );
 };

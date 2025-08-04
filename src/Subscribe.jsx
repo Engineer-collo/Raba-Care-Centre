@@ -7,7 +7,7 @@ const Subscribe = () => {
   const [emails, setEmails] = useState([]);
 
   const fetchEmails = () => {
-    fetch('https://redempta-website-s-backend.onrender.com/api/subscribe')
+    fetch('http://127.0.0.1:8000/api/subscribes')
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setEmails(data);
@@ -28,7 +28,7 @@ const Subscribe = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://redempta-website-s-backend.onrender.com/api/subscribe', {
+      const response = await fetch('http://127.0.0.1:8000/api/subscribes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -51,7 +51,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className=" mt-6 mb-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 md:p-10 max-w-2xl mx-auto transition-colors duration-300">
+    <div className="mt-6 mb-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 md:p-10 max-w-2xl mx-auto transition-colors duration-300">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
         Stay Updated
       </h2>
@@ -71,8 +71,30 @@ const Subscribe = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 disabled:opacity-50"
+          className="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 disabled:opacity-50 flex items-center justify-center"
         >
+          {isSubmitting && (
+            <svg
+              className="animate-spin h-5 w-5 mr-2 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+              ></path>
+            </svg>
+          )}
           {isSubmitting ? 'Subscribing...' : 'Subscribe'}
         </button>
       </form>

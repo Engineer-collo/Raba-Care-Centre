@@ -1,50 +1,62 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const blogData = [
+const defaultBlogData = [
   {
-    title: "Steps to Discover Your Life Purpose",
-    summary:
+    id: 0,
+    name: "Steps to Discover Your Life Purpose",
+    blog_text:
       "This guide will help you navigate confusion, embrace clarity, and start walking confidently toward your true calling.",
-    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
+    picture_url: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg",
   },
   {
-    title: "From Stuck to Called: My Journey",
-    summary:
+    id: 1,
+    name: "From Stuck to Called: My Journey",
+    blog_text:
       "A raw and powerful testimony of moving from fear to faith — and finding freedom in purpose.",
-    image: "https://images.pexels.com/photos/7578807/pexels-photo-7578807.jpeg",
-  },
-  {
-    title: "What’s Holding You Back?",
-    summary:
-      "Identify and release limiting beliefs, toxic habits, and negative narratives that block your growth.",
-    image: "https://images.pexels.com/photos/6707207/pexels-photo-6707207.jpeg",
-  },
-  {
-    title: "Rise and Rebuild After Failure",
-    summary:
-      "Failure is not the end — it's a lesson. Learn how to rise stronger, wiser, and more resilient.",
-    image: "https://images.pexels.com/photos/3768146/pexels-photo-3768146.jpeg",
-  },
-  {
-    title: "The Power of Intentional Living",
-    summary:
-      "Live by design, not default. Discover how intentional choices transform your relationships, health, and leadership.",
-    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
+    picture_url: "https://images.pexels.com/photos/7578807/pexels-photo-7578807.jpeg",
   },
 ];
 
 const BlogCarousel = () => {
+  const [blogs, setBlogs] = useState(defaultBlogData); // fallback default data
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
   const [animate, setAnimate] = useState(false);
-  const total = blogData.length;
+
+  const total = blogs.length;
+
+  const fetchBlogs = async () => {
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/blogs");
+      if (!res.ok) throw new Error("Failed to fetch blogs");
+      const data = await res.json();
+
+      if (Array.isArray(data) && data.length > 0) {
+        setBlogs(data);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => nextBlog(), 6000);
+    return () => clearInterval(interval);
+  }, [blogs]);
 
   const nextBlog = () => {
     setAnimate(true);
     setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % total);
       setAnimate(false);
-    }, 300); // match animation duration
+    }, 300);
   };
 
   const prevBlog = () => {
@@ -55,38 +67,41 @@ const BlogCarousel = () => {
     }, 300);
   };
 
-  // Auto-slide
-  useEffect(() => {
-    const interval = setInterval(nextBlog, 6000);
-    return () => clearInterval(interval);
-  }, []);
+  if (loading) {
+    return (
+      <section className="py-16 px-6 bg-indigo-50 dark:bg-gray-900 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">From the Blog</h2>
+        <p className="text-gray-600 dark:text-gray-400">Loading...</p>
+      </section>
+    );
+  }
 
-  const { title, summary, image } = blogData[currentIndex];
+  const { name, blog_text, picture_url } = blogs[currentIndex];
 
   return (
-    <section id="blog" className="scroll-mt-20 py-16 px-6 bg-indigo-50 dark:bg-gray-900">
+    <section className="scroll-mt-20 py-16 px-6 bg-indigo-50 dark:bg-gray-900">
       <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         From the Blog
       </h2>
 
-      <div className="relative max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-md overflow-hidden">
+      <div className="relative max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
         <div
           className={`transition-transform duration-300 ease-in-out ${
             animate ? "translate-x-10 opacity-0" : "translate-x-0 opacity-100"
           }`}
         >
           <img
-            src={image}
-            alt={title}
+            src={picture_url}
+            alt={name}
             className="w-full h-64 object-cover object-center"
           />
 
           <div className="p-6 text-center">
             <h3 className="text-2xl font-semibold mb-3 text-gray-800 dark:text-amber-400">
-              {title}
+              {name}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-              {summary}
+              {blog_text}
             </p>
           </div>
         </div>
@@ -105,6 +120,7 @@ const BlogCarousel = () => {
           <FaArrowRight />
         </button>
       </div>
+
     </section>
   );
 };

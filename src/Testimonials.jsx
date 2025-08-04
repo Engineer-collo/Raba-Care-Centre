@@ -1,5 +1,7 @@
+import React, { useEffect, useState } from 'react';
+
 export default function Testimonials() {
-  const testimonials = [
+  const defaultTestimonials = [
     {
       name: "Simon Waweru",
       content:
@@ -29,6 +31,32 @@ export default function Testimonials() {
         "https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=100",
     },
   ];
+
+  const [testimonials, setTestimonials] = useState(defaultTestimonials);
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/review')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (Array.isArray(data)) {
+          const formatted = data.map((item) => ({
+            name: item.name,
+            content: item.review,
+            profile_pic: item.picture_url,
+          }));
+          setTestimonials(formatted);
+        }
+      })
+      .catch((error) => {
+        console.error('Failed to fetch reviews:', error);
+        // Using defaultTestimonials automatically
+      });
+  }, []);
 
   return (
     <section className="scroll-mt-20 bg-white dark:bg-black py-20 px-6 max-w-6xl mx-auto">
