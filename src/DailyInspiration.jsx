@@ -68,10 +68,10 @@ const DailyInspiration = () => {
             animate ? 'translate-x-10 opacity-0' : 'translate-x-0 opacity-100'
           }`}
         >
-          <p className="text-lg italic text-gray-800 dark:text-gray-200">
+          <p className="text-lg italic text-gray-800 dark:text-white">
             “{quotes[index]?.testimonial_text || "Stay inspired!"}”
           </p>
-          <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-400">
+          <p className="mt-4 text-sm font-medium text-gray-600 dark:text-gray-300">
             — {quotes[index]?.testimony_author || "Redempta Kanja"}
           </p>
         </div>

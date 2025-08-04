@@ -22,7 +22,6 @@ const TestimonialAdmin = () => {
   const [editingId, setEditingId] = useState(null);
   const fileInputRef = useRef(null);
 
-  // Fetch reviews from API
   const fetchReviews = async () => {
     try {
       const res = await fetch(API_URL);
@@ -39,12 +38,10 @@ const TestimonialAdmin = () => {
     fetchReviews();
   }, []);
 
-  // Handle form input changes
   const handleChange = (e) => {
     setNewReview({ ...newReview, [e.target.name]: e.target.value });
   };
 
-  // Create or update review
   const handleSubmit = async (e) => {
     e.preventDefault();
     const method = editingId ? 'PUT' : 'POST';
@@ -67,7 +64,6 @@ const TestimonialAdmin = () => {
     }
   };
 
-  // Edit review
   const handleEdit = (review) => {
     setNewReview({
       name: review.name,
@@ -78,11 +74,27 @@ const TestimonialAdmin = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">{editingId ? 'Edit Review' : 'Add New Review'}</h2>
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle('dark');
+  };
 
-      <form onSubmit={handleSubmit} className="space-y-4 bg-white shadow-md p-4 rounded-lg">
+  return (
+    <div className="p-6 max-w-3xl mx-auto dark:text-white">
+      <button
+        onClick={toggleDarkMode}
+        className="mb-6 px-4 py-2 bg-gray-200 dark:bg-gray-700 dark:text-white rounded"
+      >
+        Toggle Dark Mode
+      </button>
+
+      <h2 className="text-2xl font-bold mb-4">
+        {editingId ? 'Edit Review' : 'Add New Review'}
+      </h2>
+
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4 bg-white dark:bg-gray-800 shadow-md p-4 rounded-lg"
+      >
         <input
           type="text"
           name="name"
@@ -90,7 +102,7 @@ const TestimonialAdmin = () => {
           value={newReview.name}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white dark:bg-gray-700 dark:text-white"
         />
         <input
           type="url"
@@ -99,7 +111,7 @@ const TestimonialAdmin = () => {
           value={newReview.picture_url}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white dark:bg-gray-700 dark:text-white"
         />
         <textarea
           name="review"
@@ -107,7 +119,7 @@ const TestimonialAdmin = () => {
           value={newReview.review}
           onChange={handleChange}
           required
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded bg-white dark:bg-gray-700 dark:text-white"
         />
         <button
           type="submit"
@@ -122,7 +134,7 @@ const TestimonialAdmin = () => {
         {reviews.map((rev) => (
           <div
             key={rev.id}
-            className="bg-gray-100 p-4 rounded-lg mb-3 flex items-start gap-4"
+            className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-3 flex items-start gap-4"
           >
             <img
               src={rev.picture_url}
@@ -131,7 +143,9 @@ const TestimonialAdmin = () => {
             />
             <div>
               <p className="font-bold">{rev.name}</p>
-              <p className="text-sm text-gray-600">{new Date(rev.created_at).toLocaleDateString()}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {new Date(rev.created_at).toLocaleDateString()}
+              </p>
               <p className="mt-1">{rev.review}</p>
               <button
                 onClick={() => handleEdit(rev)}
