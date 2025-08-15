@@ -56,8 +56,7 @@ const Subscribe = () => {
         Stay Updated
       </h2>
       <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base mb-6">
-        Join <span className="p-2 rounded-full bg-amber-400 text-black font-semibold">{emails.length}</span> others and never miss a thing!
-      </p>
+      Never miss a beat! Join our community and be the first to know about our latest content, insights, and exclusive updates.      </p>
 
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-4">
         <input

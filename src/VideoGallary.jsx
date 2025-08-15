@@ -33,7 +33,7 @@ export default function VideoGallery({ videos }) {
         <div className="mt-8 text-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 transition"
+            className="bg-amber-400 text-white px-6 py-2 rounded-lg hover:bg-amber-400 dark:bg-amber-400 dark:hover:bg-amber-400 transition"
           >
             {showAll ? "View Less" : "View More"}
           </button>

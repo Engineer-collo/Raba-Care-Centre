@@ -21,7 +21,6 @@ const Navbar = () => {
   const [navbarData, setNavbarData] = useState(defaultNavbarData);
   const [logoUrl, setLogoUrl] = useState(defaultLogoUrl);
 
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
@@ -52,20 +51,17 @@ const Navbar = () => {
       try {
         const res = await fetch('http://127.0.0.1:8000/api/logos');
         const data = await res.json();
-        console.log('Fetched logo data:', data); // Logs the full array
-    
         if (Array.isArray(data) && data.length > 0 && data[0].logo_url) {
-          console.log('Fetched logo URL:', data[0].logo_url); 
           setLogoUrl(data[0].logo_url);
         } else {
           console.warn('Logo data is empty or invalid:', data);
         }
       } catch (err) {
         console.error('Failed to fetch logo:', err);
-        setLogoUrl(defaultLogoUrl); // fallback to default
+        setLogoUrl(defaultLogoUrl);
       }
     };
-        
+
     fetchNavbar();
     fetchLogo();
   }, []);
@@ -92,7 +88,8 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-start md:items-center">
-        {/* Mobile Top Row */}
+        
+        {/* Mobile Logo & Menu */}
         <div className="w-full flex justify-between items-center md:hidden">
           <div className="flex items-center gap-2">
             <img
@@ -101,8 +98,13 @@ const Navbar = () => {
               alt="Logo"
               onError={(e) => { e.target.src = defaultLogoUrl; }}
             />
-            <div className="text-lg font-bold text-amber-400 hover:text-amber-600">
-              {navbarData.site_name}
+            <div className="flex flex-col">
+              <div className="text-lg font-bold text-amber-400 hover:text-amber-600">
+                {navbarData.site_name}
+              </div>
+              <p className="text-sm italic text-gray-500">
+                {navbarData.tagline || "Purpose. Freedom. Impact."}
+              </p>
             </div>
           </div>
           <button onClick={toggleMenu}>
@@ -115,17 +117,22 @@ const Navbar = () => {
           <DarkModeToggle />
         </div>
 
-        {/* Desktop: Logo & Site Name */}
-        <div className="hidden md:flex items-center gap-3 px-2">
-          <img
-            className="h-6 w-8 object-contain"
-            src={logoUrl}
-            alt="Logo"
-            onError={(e) => { e.target.src = defaultLogoUrl; }}
-          />
-          <div className="text-xl font-bold text-amber-400 hover:text-amber-600">
-            {navbarData.site_name}
+        {/* Desktop Logo & Site Name */}
+        <div className="hidden md:flex flex-col items-start gap-1 px-2">
+          <div className="flex items-center gap-3">
+            <img
+              className="h-6 w-8 object-contain"
+              src={logoUrl}
+              alt="Logo"
+              onError={(e) => { e.target.src = defaultLogoUrl; }}
+            />
+            <div className="text-xl font-bold text-amber-400 hover:text-amber-600">
+              {navbarData.site_name}
+            </div>
           </div>
+          <p className="text-sm italic text-gray-500">
+            {navbarData.tagline || "Purpose. Freedom. Impact."}
+          </p>
         </div>
 
         {/* Desktop Nav */}
