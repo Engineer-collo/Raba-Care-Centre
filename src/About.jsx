@@ -6,9 +6,9 @@ const defaultAbout = {
   about_text:
     'RK Global is a purpose-driven coaching and training consultancy that empowers individuals and organizations to awaken boldness, defy limitations, and lead lives of impact...',
   vision_text:
-    'To awaken a fearless generation of individuals and teams who break limitations, confront mediocrity...',
+    'Awaken a global movement of purpose‑driven people who ignite change and make the impossible possible.',
   mission_text:
-    'We challenge individuals and teams to break free from internal and external limitations...',
+    'We empower people to discover purpose, break limitations, and create change that shapes generations — through coaching, training, mentorship and author support.',
 };
 
 const defaultCoreValues = [
