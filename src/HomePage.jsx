@@ -13,9 +13,17 @@ import Footer from './Footer';
 import DailyInspiration from './DailyInspiration';
 import Subscribe from './Subscribe';
 import WhatsAppButton from './WhatsAppButton';
+import VideoGallery from './VideoGallary';
 
-
-
+const videos = [
+  { id: "6qE5e2pRWyE", title: "Wealth and life" },
+  { id: "MXEycZO7XPk", title: "Welcome Video" },
+  { id: "sJ4v7IxM-oE", title: "My three success habits" },
+  { id: "QMk7MmQHvXM", title: "Self awareness" },
+  { id: "52S1Q15Kjiw", title: "General" },
+  { id: "4P-meJuyd2s", title: "Believe in you" },
+  { id: "FDVdGozwR3Y", title: "Take Charge" }
+];
 
 
 const HomePage = () => {
@@ -26,6 +34,7 @@ const HomePage = () => {
       <DailyInspiration />
       <About />
       <Services />
+      <VideoGallery videos={videos}/>
       <BookSection />
       <Team />
       <Testimonials />

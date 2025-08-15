@@ -13,6 +13,34 @@ const Services = () => {
         'Helping authors publish, market, and grow their presence with strategic support and expert guidance.',
       icon_url: '/author-support.png',
     },
+    ,
+    {
+      service_name: 'Coaching Sessions',
+      description:
+        'Coaching Sessions are personalized conversations designed to help individuals gain clarity, overcome obstacles, and take purposeful action toward their goals—guided by a skilled coach in a supportive and confidential space.',
+      icon_url: '/coaching-session.png',
+    },
+    ,
+    {
+      service_name: 'Group Coaching',
+      description:
+        'Group Coaching offers a collaborative environment where individuals work together toward personal or professional goals. Through shared insights, accountability, and guided facilitation, participants grow in confidence, clarity, and community.',
+      icon_url: '/group-coaching.png',
+    },
+    ,
+    {
+      service_name: 'Corporate Training',
+      description:
+        'Empowering teams with practical skills, leadership growth, and peak performance strategies to drive organizational success.',
+      icon_url: '/corporate-training.png',
+    },
+    ,
+    {
+      service_name: 'Couples Coaching',
+      description:
+        'We are a passionate coaching couple dedicated to helping individuals, couples, and teams unlock their full potential. With a blend of empathy, experience, and strategic insight, we guide our clients through personal and professional transformation. Our approach combines the power of partnership with proven coaching methodologies to inspire clarity, confidence, and courageous action.',
+      icon_url: '/couples-coaching.png',
+    },
   ];
 
   const [services, setServices] = useState(defaultServices);
