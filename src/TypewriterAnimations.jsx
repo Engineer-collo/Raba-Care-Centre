@@ -37,7 +37,7 @@ const TypewriterAnimations = ({
   }, [text, isDeleting, words, currentWordIndex, typingSpeed, deletingSpeed, delay]);
 
   return (
-    <span className="font-mono text-4xl font-bold border-r-2 border-black pr-1 animate-pulse">
+    <span className="font-mono  font-bold border-r-2 border-black pr-1 animate-pulse">
       {text}
     </span>
   );

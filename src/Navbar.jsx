@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DarkModeToggle from './DarkModeToggle';
+import TypewriterAnimations from './TypewriterAnimations';
 import {
   FaBars, FaTimes, FaPhone, FaEnvelope,
   FaHome, FaInfoCircle, FaBriefcase, FaBlog,
@@ -68,6 +69,19 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 bg-white shadow-md z-50 dark:bg-gray-900">
+      {/* Top Welcome with Typewriter */}
+      <div className="bg-amber-400 text-white text-center py-2">
+        <div className="text-xs sm:text-sm md:text-lg lg:text-xl font-semibold leading-tight">
+          <TypewriterAnimations 
+            words={[
+              "Welcome to Redempta Kanja Global Official Website.",
+              "Purpose. Freedom. Impact.",
+              "Book your session today!"
+            ]}
+          />
+        </div>
+      </div>
+
       {/* Top Contact Info */}
       <div className="bg-gray-900 text-white text-sm py-1 px-2 dark:bg-black">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
