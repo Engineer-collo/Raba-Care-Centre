@@ -12,21 +12,21 @@ export default function Testimonials() {
     {
       name: "Irine Cherop",
       content:
-        "I’ve grown so much personally and professionally thanks to RKG's powerful coaching sessions.",
+        "I’ve grown so much personally and professionally thanks to Redempta Kanja Global's powerful coaching sessions.",
       profile_pic:
         "https://images.pexels.com/photos/4668513/pexels-photo-4668513.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=100",
     },
     {
       name: "Mish Njeri",
       content:
-        "What sets RkGlobal apart is their commitment to real transformation. I highly recommend them!",
+        "What sets Redempta Kanja Global apart is their commitment to real transformation. I highly recommend them!",
       profile_pic:
         "https://images.pexels.com/photos/5065240/pexels-photo-5065240.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=100",
     },
     {
       name: "Brian Ochieng",
       content:
-        "From feeling stuck to finding direction—RkGlobal helped me take charge of my journey.",
+        "From feeling stuck to finding direction—Redempta Kanja Global helped me take charge of my journey.",
       profile_pic:
         "https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=100",
     },

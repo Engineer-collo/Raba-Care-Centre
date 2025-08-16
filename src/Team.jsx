@@ -59,7 +59,7 @@ const Team = () => {
     <section id="team" className="scroll-mt-20 py-16 px-6 bg-white dark:bg-gray-900">
       <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Meet Our Team</h2>
       <p className="text-gray-600 dark:text-gray-300 text-lg text-center max-w-3xl mx-auto mb-10">
-        Behind every transformational experience at RK Global is a powerhouse team committed to excellence, authenticity, and impact.
+        Behind every transformational experience at Redempta Kanja Global is a powerhouse team committed to excellence, authenticity, and impact.
       </p>
 
       {/* Redempta */}

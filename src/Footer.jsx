@@ -148,7 +148,7 @@ const Footer = () => {
 
       {/* Footer bottom */}
       <div className="mt-10 pt-6 border-t border-gray-700 text-center text-gray-400 dark:text-gray-500">
-  © {new Date().getFullYear()} RK-Globals. All rights reserved. <br />
+  © {new Date().getFullYear()} Redempta Kanja Global. All rights reserved. <br />
  Built with ❤️ by{" "}
   <a
     href="https://portfolio-five-beta-49.vercel.app/"
