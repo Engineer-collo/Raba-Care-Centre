@@ -35,7 +35,7 @@ export default function VideoGallery({ videos }) {
             onClick={() => setShowAll(!showAll)}
             className="bg-amber-400 text-white px-6 py-2 rounded-lg hover:bg-amber-400 dark:bg-amber-400 dark:hover:bg-amber-400 transition"
           >
-            {showAll ? "View Less" : "View More"}
+            {showAll ? "View Less" : "View More Videos"}
           </button>
         </div>
       )}

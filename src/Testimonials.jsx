@@ -60,10 +60,19 @@ export default function Testimonials() {
 
   return (
     <section className="scroll-mt-20 bg-white dark:bg-black py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white">
-        💬 Our Clients Reviews
-      </h2>
+      {/* Welcome Section */}
+      <div className="max-w-3xl mx-auto text-center mb-12">
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+          Hear From Our Happy Clients
+        </h2>
+        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+          Nothing inspires us more than the voices of those who’ve experienced
+          transformation with us. Here’s what our clients have to say about
+          their journey with Redempta Kanja Global.
+        </p>
+      </div>
 
+      {/* Testimonials Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {testimonials.map((testimonial, index) => (
           <div

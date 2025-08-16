@@ -13,28 +13,24 @@ const Services = () => {
         'Helping authors publish, market, and grow their presence with strategic support and expert guidance.',
       icon_url: '/author-support.png',
     },
-    ,
     {
       service_name: 'Coaching Sessions',
       description:
         'Coaching Sessions are personalized conversations designed to help individuals gain clarity, overcome obstacles, and take purposeful action toward their goals—guided by a skilled coach in a supportive and confidential space.',
       icon_url: '/coaching-session.png',
     },
-    ,
     {
       service_name: 'Group Coaching',
       description:
         'Group Coaching offers a collaborative environment where individuals work together toward personal or professional goals. Through shared insights, accountability, and guided facilitation, participants grow in confidence, clarity, and community.',
       icon_url: '/group-coaching.png',
     },
-    ,
     {
       service_name: 'Corporate Training',
       description:
         'Empowering teams with practical skills, leadership growth, and peak performance strategies to drive organizational success.',
       icon_url: '/corporate-training.png',
     },
-    ,
     {
       service_name: 'Couples Coaching',
       description:
@@ -68,6 +64,20 @@ const Services = () => {
 
   return (
     <section className="py-16 px-6 bg-gray-100 dark:bg-gray-900">
+      {/* Welcome Text */}
+      <div className="max-w-3xl mx-auto text-center mb-10">
+        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white">
+          Welcome to Our Services
+        </h2>
+        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+          At our core, we are dedicated to empowering individuals, couples,
+          teens, and organizations to unlock their full potential. Explore our
+          tailored services designed to inspire growth, clarity, and lasting
+          transformation.
+        </p>
+      </div>
+
+      {/* Services Section */}
       <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
         What We Offer
       </h2>

@@ -4,7 +4,7 @@ import { faGlobe, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const defaultAbout = {
   about_text:
-    'RK Global is a purpose-driven coaching and training consultancy that empowers individuals and organizations to awaken boldness, defy limitations, and lead lives of impact...',
+    'Redempta Kanja Global is a purpose-driven coaching and training consultancy that empowers individuals and organizations to awaken boldness, defy limitations, and lead lives of impact...',
   vision_text:
     'Awaken a global movement of purpose‑driven people who ignite change and make the impossible possible.',
   mission_text:
@@ -60,7 +60,7 @@ const About = () => {
   return (
     <section id="about" className="scroll-mt-20 pt-12 py-16 px-6 max-w-5xl mx-auto">
       <h2 className="text-3xl font-bold mb-4 text-center text-gray-900 dark:text-white">
-        About RK Global
+        About Redempta Kanja Global
       </h2>
 
       <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">

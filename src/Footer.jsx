@@ -147,18 +147,19 @@ const Footer = () => {
       </div>
 
       {/* Footer bottom */}
-      <div className="mt-10 text-center text-gray-400 dark:text-gray-500">
-        © {new Date().getFullYear()} RK-Globals. All rights reserved. <br />
-        This Website was Built with ❤️ by{' '}
-        <a
-          href="https://portfolio-five-beta-49.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-amber-400 font-semibold hover:text-white"
-        >
-          Eng. Collins
-        </a>
-      </div>
+      <div className="mt-10 pt-6 border-t border-gray-700 text-center text-gray-400 dark:text-gray-500">
+  © {new Date().getFullYear()} RK-Globals. All rights reserved. <br />
+  Website Built with ❤️ by{" "}
+  <a
+    href="https://portfolio-five-beta-49.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visit portfolio of Eng. Collins Likhomba"
+    className="text-amber-400 font-semibold hover:text-white transition-colors"
+  >
+    Eng. Collins Likhomba
+  </a>
+</div>
     </footer>
   );
 };

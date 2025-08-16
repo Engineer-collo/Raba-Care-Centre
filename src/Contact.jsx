@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   const [contact, setContact] = useState({
-    intro_text1: "We'd love to hear from you! Reach out with any questions or feedback.",
+    intro_text1: "Your thoughts matter to us. Contact us today and let’s make something great together.",
 
     intro_text2:
     "Whether you're reaching out for collaboration, questions, feedback, or just to say hi — I’m always happy to hear from you!",

@@ -61,7 +61,7 @@ const DailyInspiration = () => {
   return (
     <section id='inspiration' className='scroll-mt-24'>
       <div className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 max-w-xl mx-auto my-10 text-center transition duration-300">
-        <h2 className="text-2xl font-semibold text-amber-600 dark:text-amber-400 mb-4">Daily Inspiration</h2>
+        <h2 className="text-2xl font-semibold text-Black dark:text-white mb-4">Daily Inspiration</h2>
 
         <div
           className={`transform transition-transform duration-300 ${
