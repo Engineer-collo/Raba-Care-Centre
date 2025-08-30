@@ -14,6 +14,7 @@ import DailyInspiration from './DailyInspiration';
 import Subscribe from './Subscribe';
 import WhatsAppButton from './WhatsAppButton';
 import VideoGallery from './VideoGallary';
+import Assosiates from './Assosiates';
 
 const videos = [
   { id: "6qE5e2pRWyE", title: "Wealth and life" },
@@ -42,8 +43,10 @@ const HomePage = () => {
       <CallToAction />
       <Contact />
       <Subscribe />
+     <Assosiates/>
       <Footer />
       <WhatsAppButton />
+
     </>
   );
 };
