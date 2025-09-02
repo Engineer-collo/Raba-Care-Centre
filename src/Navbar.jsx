@@ -28,18 +28,20 @@ const Navbar = () => {
   return (
     <header className="bg-[#581616] text-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-        {/* Logo + Site Name */}
-        <div className="flex items-center gap-2">
-          <img
-            src={logoUrl}
-            alt="Raba Care Center Logo"
-            className="h-16 w-16 object-contain"
-            onError={(e) => {
-              e.currentTarget.src = defaultLogoUrl;
-            }}
-          />
-          <span className="font-semibold text-lg">Raba Care Center</span>
-        </div>
+{/* Logo + Site Name */}
+<div className="flex items-center gap-3">
+  <div className="bg-white p-2 rounded-full shadow-md">
+    <img
+      src={logoUrl}
+      alt="Raba Care Center Logo"
+      className="h-12 w-12 object-contain"
+      onError={(e) => {
+        e.currentTarget.src = defaultLogoUrl;
+      }}
+    />
+  </div>
+  <span className="text-xl font-bold text-white">Raba Care Center</span>
+</div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
@@ -49,7 +51,7 @@ const Navbar = () => {
           <a href="#gallery" className="hover:text-amber-400">Gallery</a>
           <a href="#contact" className="hover:text-amber-400">Contact</a>
           <a
-            href="#subscribe"
+            href="#subscription"
             className="ml-4 bg-amber-400 text-[#581616] font-semibold px-4 py-2 rounded-lg hover:bg-amber-500 transition"
           >
             Subscribe

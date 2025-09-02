@@ -1,104 +1,164 @@
-import React, { useState, useEffect } from 'react';
-import { showSuccessToast, showErrorToast } from './Toast';
+import React, { useState } from "react";
+import { Mail, Check, Bell, Heart } from "lucide-react";
 
-const Subscribe = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [emails, setEmails] = useState([]);
+const Subscription = () => {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
 
-  const fetchEmails = () => {
-    fetch('http://127.0.0.1:8000/api/subscribes')
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) setEmails(data);
-      })
-      .catch(() => console.error('Failed to fetch subscribers'));
-  };
-
-  useEffect(() => {
-    fetchEmails();
-  }, []);
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) {
-      showErrorToast('Please enter a valid email address.');
-      return;
-    }
-
-    setIsSubmitting(true);
-    try {
-      const response = await fetch('http://127.0.0.1:8000/api/subscribes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        showSuccessToast(data.message || 'Subscribed successfully!');
-        setEmail('');
-        fetchEmails();
-      } else {
-        showErrorToast(data.error || 'Failed to subscribe.');
-      }
-    } catch {
-      showErrorToast('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+    if (email) {
+      setSubscribed(true);
+      // Typically, you’d send this to your backend here
+      console.log("Newsletter subscription:", email);
+      setEmail("");
     }
   };
+
+  const benefits = [
+    "Health tips and wellness advice",
+    "Updates on new services and treatments",
+    "Community health event notifications",
+    "Seasonal health reminders and screenings",
+    "Special offers and discounts",
+  ];
 
   return (
-    <div className="mt-6 mb-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 md:p-10 max-w-2xl mx-auto transition-colors duration-300">
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
-        Stay Updated
-      </h2>
-      <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base mb-6">
-      Never miss a beat! Join our community and be the first to know about our latest content, insights, and exclusive updates.      </p>
+    <section
+      id="subscription"
+      className="pt-12 pb-6 section-padding bg-gradient-to-br from-amber-50 to-maroon-50"
+    >
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="bg-amber-400 rounded-full p-3 w-fit mx-auto mb-6">
+              <Mail className="h-8 w-8 text-maroon-900" />
+            </div>
+            <h2 className="text-4xl font-bold text-maroon-900 mb-6 section-title">Stay Connected with Raba Care Center</h2>
+            <p className="section-subtitle">
+              Subscribe to our newsletter and never miss important health
+              updates, wellness tips, and news about our services.
+            </p>
+          </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-4">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
-          className="w-full flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-400"
-          required
-        />
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 disabled:opacity-50 flex items-center justify-center"
-        >
-          {isSubmitting && (
-            <svg
-              className="animate-spin h-5 w-5 mr-2 text-white"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-              ></path>
-            </svg>
-          )}
-          {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-        </button>
-      </form>
-    </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Benefits */}
+            <div>
+              <h3 className="text-xl font-semibold text-maroon-900 mb-6 flex items-center">
+                <Bell className="h-5 w-5 text-amber-500 mr-2" />
+                What You'll Receive:
+              </h3>
+              <ul className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="bg-amber-100 rounded-full p-1 mr-3 mt-1 flex-shrink-0">
+                      <Check className="h-3 w-3 text-maroon-700" />
+                    </div>
+                    <span className="text-muted-foreground">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Privacy block */}
+              <div className="bg-white rounded-lg p-6 mt-8 shadow-md">
+                <div className="flex items-center mb-3">
+                  <Heart className="h-5 w-5 text-amber-500 mr-2" />
+                  <h4 className="font-semibold text-maroon-900">
+                    Privacy Promise
+                  </h4>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  We respect your privacy and will never share your information
+                  with third parties. You can unsubscribe at any time with just
+                  one click.
+                </p>
+              </div>
+            </div>
+
+            {/* Subscription Form */}
+            <div>
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                {!subscribed ? (
+                  <>
+                    <h3 className="text-2xl font-bold text-maroon-900 mb-6 text-center">
+                      Join Our Newsletter
+                    </h3>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label htmlFor="email" className=" form-label">
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter your email address"
+                          className=" border-2 pl-2 ml-2 border-customPurple rounded form-input"
+                          required
+                        />
+                      </div>
+
+                      <div className="flex items-start">
+                      <input
+  type="checkbox"
+  id="consent"
+  className="mt-1 mr-3 accent-customPurple"
+  required
+/>
+
+                        <label
+                          htmlFor="consent"
+                          className="text-sm text-muted-foreground"
+                        >
+                          I agree to receive healthcare tips, updates, and
+                          promotional emails from Raba Care Center. I understand
+                          I can unsubscribe at any time.
+                        </label>
+                      </div>
+
+                      <button type="submit" className=" bg-customPurple text-white rounded-xl p-2 btn-primary w-full">
+                        Subscribe to Newsletter
+                      </button>
+                    </form>
+
+                    <p className="text-center text-xs text-muted-foreground mt-4">
+                      By subscribing, you agree to our Privacy Policy and Terms
+                      of Service.
+                    </p>
+                  </>
+                ) : (
+                  <div className="text-center animate-scale-in">
+                    <div className="bg-amber-100 rounded-full p-4 w-fit mx-auto mb-6">
+                      <Check className="h-8 w-8 text-maroon-700" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-maroon-900 mb-4">
+                      Thank You!
+                    </h3>
+                    <p className="text-muted-foreground mb-6">
+                      You've successfully subscribed to our newsletter. Check
+                      your email for a confirmation message.
+                    </p>
+                    <button
+                      onClick={() => setSubscribed(false)}
+                      className="btn-secondary"
+                    >
+                      Subscribe Another Email
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Subscribe;
+export default Subscription;

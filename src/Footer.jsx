@@ -1,165 +1,175 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
 import {
-  FaHome,
-  FaInfoCircle,
-  FaBriefcase,
-  FaBlog,
-  FaCalendarAlt,
-  FaEnvelope,
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-  FaPenNib,
-} from 'react-icons/fa';
-import { SiTiktok } from 'react-icons/si';
+  Heart,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 const Footer = () => {
+  const quickLinks = [
+    { name: "About Us", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Gallery", href: "#gallery" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const services = [
+    "Couple coaching",
+    "Trauma Therapy",
+    "Teens Mentorship",
+    
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+  ];
+
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <footer className="bg-gray-900 text-white dark:bg-black py-10 px-6 text-sm relative">
-      {/* Feedback link in top-right */}
-      <div className="absolute top-4 right-4">
-        <Link
-          to="/feedback"
-          className="hover:text-amber-400 flex items-center gap-2 text-sm"
-        >
-          <FaInfoCircle className=" text-xl text-red-500" />
-          Your Feedback
-        </Link>
-      </div>
+    <footer className="pt-12 mt-12 footer bg-maroon-900">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-2 mb-6">
+              <Heart className="h-8 w-8 text-amber-400" />
+              <span className="text-xl font-bold text-white">
+                Raba Care Center
+              </span>
+            </div>
+            <p className="text-maroon-200 mb-6 leading-relaxed">
+              Providing exceptional healthcare services with compassion,
+              expertise, and a commitment to improving lives in our community
+              for over a decade.
+            </p>
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="bg-maroon-800 hover:bg-amber-400 p-2 rounded-lg transition-all duration-300 hover:text-maroon-900"
+                  aria-label={social.label}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+          </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-3">
-            <li>
-              <a href="#home" className="hover:text-amber-400 flex items-center gap-2">
-                <FaHome className="text-gray-400 text-lg" />
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="hover:text-amber-400 flex items-center gap-2">
-                <FaInfoCircle className="text-gray-400 text-lg" />
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="hover:text-amber-400 flex items-center gap-2">
-                <FaBriefcase className="text-gray-400 text-lg" />
-                My Services
-              </a>
-            </li>
-            <li>
-              <a href="#blog" className="hover:text-amber-400 flex items-center gap-2">
-                <FaBlog className="text-gray-400 text-lg" />
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#events" className="hover:text-amber-400 flex items-center gap-2">
-                <FaCalendarAlt className="text-gray-400 text-lg" />
-                Events
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-amber-400 flex items-center gap-2">
-                <FaEnvelope className="text-gray-400 text-lg" />
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <button
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-maroon-200 hover:text-amber-400 transition-colors duration-300"
+                  >
+                    {link.name}
+                  </button>
+                </li>
+              ))}
+              <li>
+                <button
+                  onClick={() => scrollToSection("#subscription")}
+                  className="text-maroon-200 hover:text-amber-400 transition-colors duration-300"
+                >
+                  Newsletter
+                </button>
+              </li>
+            </ul>
+          </div>
 
-        {/* Social Links */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-          <div className="space-y-4">
-            <a
-              href="https://www.facebook.com/profile.php?id=100090757403548"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-blue-600 transition-colors"
-            >
-              <FaFacebookF /> Facebook
-            </a>
-            <a
-              href="https://www.linkedin.com/in/redemta-aseyo-814b1979/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-blue-700 transition-colors"
-            >
-              <FaLinkedinIn /> LinkedIn
-            </a>
-            <a
-              href="https://www.instagram.com/redemptakanja/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-pink-500 transition-colors"
-            >
-              <FaInstagram /> Instagram
-            </a>
-            <a
-              href="https://substack.com/@redemptakanja"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-orange-600 transition-colors"
-            >
-              <FaPenNib /> Substack
-            </a>
-            <a
-              href="https://www.youtube.com/@REDEMPTAKANJA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-red-500 transition-colors"
-            >
-              <FaYoutube /> YouTube
-            </a>
-            <a
-              href="https://www.tiktok.com/@redempta.kanja?_t=ZM-8xkr1WWvoog&_r=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-red-500 transition-colors"
-            >
-              <SiTiktok /> TikTok
-            </a>
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">Our Services</h4>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service}>
+                  <span className="text-maroon-200 text-sm">{service}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">Contact Info</h4>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <MapPin className="h-5 w-5 text-amber-400 mr-3 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-maroon-200 text-sm">123 Healthcare Drive</p>
+                  <p className="text-maroon-200 text-sm">Medical District</p>
+                  <p className="text-maroon-200 text-sm">City, State 12345</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 text-amber-400 mr-3 flex-shrink-0" />
+                <p className="text-maroon-200 text-sm">(555) 123-4567</p>
+              </div>
+              <div className="flex items-center">
+                <Mail className="h-5 w-5 text-amber-400 mr-3 flex-shrink-0" />
+                <p className="text-maroon-200 text-sm">
+                  info@rabacarecenter.com
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Map */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Our Location</h3>
-          <div className="rounded-lg overflow-hidden shadow-md">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.731409511709!2d36.76350071224031!3d-1.207134130501369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f22b36e1fe5f9%3A0xea7d820876f42a71!2sRuaka!5e0!3m2!1sen!2ske!4v1751703103025!5m2!1sen!2ske"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Google Map - Ruaka"
-            />
+        {/* Bottom Section */}
+        <div className="border-t border-maroon-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-maroon-300 text-sm mb-4 md:mb-0">
+              © 2025 Raba Care Center. All rights reserved.
+            </p>
+            <div className="flex flex-col md:flex-row md:items-center md:space-x-6 text-center">
+              <div className="flex space-x-6 mb-4 md:mb-0">
+                <a
+                  href="#"
+                  className="text-maroon-300 hover:text-amber-400 text-sm transition-colors duration-300"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="#"
+                  className="text-maroon-300 hover:text-amber-400 text-sm transition-colors duration-300"
+                >
+                  Terms of Service
+                </a>
+              </div>
+              <span className="text-maroon-300 text-sm">
+                Built with ❤️ by{" "}
+                <a
+                  href="https://portfolio-five-beta-49.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit portfolio of Eng. Collins Likhomba"
+                  className="text-amber-400 font-semibold hover:text-white transition-colors"
+                >
+                  Eng. Collins Likhomba
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Footer bottom */}
-      <div className="mt-10 pt-6 border-t border-gray-700 text-center text-gray-400 dark:text-gray-500">
-  © {new Date().getFullYear()} Redempta Kanja Global. All rights reserved. <br />
- Built with ❤️ by{" "}
-  <a
-    href="https://portfolio-five-beta-49.vercel.app/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Visit portfolio of Eng. Collins Likhomba"
-    className="text-amber-400 font-semibold hover:text-white transition-colors"
-  >
-    Eng. Collins Likhomba
-  </a>
-</div>
     </footer>
   );
 };

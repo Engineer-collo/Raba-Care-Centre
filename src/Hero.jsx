@@ -3,11 +3,11 @@ import IntroVideo from './IntroVideo';
 
 const defaultHero = {
   background_pic_url: '/photo.png',
-  white_text: "Let's Transform Your Life With",
-  orange_text: 'Personalized Coaching Sessions',
+  white_text: "Compassionate Care",
+  orange_text: 'When You Need It Most',
   description:
-    'Learn proven tactics, master the mindset, and get real results. Whether it’s achieving your goals, gaining confidence, or finding fulfillment — you’re in the right place.',
-  action_button: 'Book an appointment',
+    'At Raba Care Center, we provide exceptional healthcare services with a personal touch. Our dedicated team is committed to your well-being, offering comprehensive care in a warm and welcoming environment.',
+  action_button: 'Book appointment',
 };
 
 const Hero = () => {
@@ -54,8 +54,8 @@ const Hero = () => {
         {/* CTA buttons row */}
         <div className="flex flex-wrap gap-4">
           <a
-            href="#book"
-            className="inline-block bg-customPurple hover:bg-amber-500 text-white px-6 py-3 rounded-xl shadow-md transition duration-300"
+            href="#contact"
+            className="inline-block bg-amber-400 hover:bg-amber-500 text-white px-6 py-3 rounded-xl shadow-md transition duration-300"
           >
             {hero.action_button}
           </a>

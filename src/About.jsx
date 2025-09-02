@@ -1,101 +1,106 @@
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faRocket } from '@fortawesome/free-solid-svg-icons';
-
-const defaultAbout = {
-  about_text:
-    'Redempta Kanja Global is a purpose-driven coaching and training consultancy that empowers individuals and organizations to awaken boldness, defy limitations, and lead lives of impact...',
-  vision_text:
-    'Awaken a global movement of purpose‑driven people who ignite change and make the impossible possible.',
-  mission_text:
-    'We empower people to discover purpose, break limitations, and create change that shapes generations — through coaching, training, mentorship and author support.',
-};
-
-const defaultCoreValues = [
-  'God First',
-  'Hard work',
-  'Discipline',
-  'Execution',
-  'Legacy',
-];
+import React from "react";
+import { Heart, Users, Award, Clock } from "lucide-react";
 
 const About = () => {
-  const [aboutData, setAboutData] = useState(defaultAbout);
-  const [coreValues, setCoreValues] = useState(defaultCoreValues);
-
-  useEffect(() => {
-    const fetchAbout = async () => {
-      try {
-        const res = await fetch('http://127.0.0.1:8000/api/abouts');
-        const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) {
-          setAboutData({ ...defaultAbout, ...data[0] });
-        } else {
-          console.warn('About data is empty:', data);
-        }
-      } catch (err) {
-        console.error('Failed to fetch about data:', err);
-      }
-    };
-
-    const fetchCoreValues = async () => {
-      try {
-        const res = await fetch('http://127.0.0.1:8000/api/core-values');
-        const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) {
-          const values = data.map((item) => item.core_value);
-          setCoreValues(values);
-        } else {
-          console.warn('Core values are empty:', data);
-        }
-      } catch (err) {
-        console.error('Failed to fetch core values:', err);
-      }
-    };
-
-    fetchAbout();
-    fetchCoreValues();
-  }, []);
+  const values = [
+    {
+      icon: Heart,
+      title: "Compassionate Care",
+      description:
+        "We treat every patient with empathy, respect, and dignity, ensuring personalized care that addresses both physical and emotional well-being.",
+    },
+    {
+      icon: Users,
+      title: "Expert Team",
+      description:
+        "Our highly qualified healthcare professionals bring years of experience and continuous education to provide the best possible care.",
+    },
+    {
+      icon: Award,
+      title: "Quality Excellence",
+      description:
+        "We maintain the highest standards of medical care through evidence-based practices and state-of-the-art facilities.",
+    },
+    {
+      icon: Clock,
+      title: "24/7 Availability",
+      description:
+        "Healthcare emergencies don't wait, and neither do we. Our dedicated team is available around the clock for urgent care needs.",
+    },
+  ];
 
   return (
-    <section id="about" className="scroll-mt-20 pt-12 py-16 px-6 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold mb-4 text-center text-gray-900 dark:text-white">
-        About Redempta Kanja Global
-      </h2>
-
-      <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-        {aboutData.about_text}
-      </p>
-
-      <div className="pt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Vision Card */}
-        <div className="border border-indigo-200 dark:border-indigo-600 rounded-xl p-6 bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
-          <h3 className="text-center font-semibold text-xl mb-3 text-gray-900 dark:text-white">
-            <FontAwesomeIcon icon={faGlobe} className="px-2 text-indigo-500" />
-            Our Vision
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300">{aboutData.vision_text}</p>
+    <section id="about" className="section-padding bg-white">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-maroon-900  section-title">About Raba Care Center</h2>
+          <p className="section-subtitle">
+            Dedicated to providing exceptional healthcare services with
+            compassion, expertise, <br/> and a commitment to improving lives in our
+            community.
+          </p>
         </div>
 
-        {/* Mission Card */}
-        <div className="border border-indigo-200 dark:border-indigo-600 rounded-xl p-6 bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition">
-          <h3 className="text-center font-semibold text-xl mb-3 text-gray-900 dark:text-white">
-            <FontAwesomeIcon icon={faRocket} className="px-2 text-indigo-500" />
-            Our Mission
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300">{aboutData.mission_text}</p>
-        </div>
-
-        {/* Core Values Card */}
-        <div className="flex justify-center">
-          <div className="border border-indigo-200 dark:border-indigo-600 rounded-xl p-6 bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition w-full max-w-md text-center">
-            <h3 className="font-semibold text-xl mb-6 text-gray-900 dark:text-white">Our Core Values</h3>
-            <ul className="space-y-4 text-gray-700 dark:text-gray-300 flex flex-col items-center">
-              {coreValues.map((value, index) => (
-                <li key={index}>{value}</li>
-              ))}
-            </ul>
+        {/* Story Grid */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+          {/* Story Content */}
+          <div className="animate-fade-in">
+            <h3 className="text-2xl font-bold text-maroon-900 mb-6">Our Story</h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Founded with a vision to transform healthcare delivery, Raba Care
+              Center has been serving our community for over a decade. We
+              believe that quality healthcare should be accessible,
+              compassionate, and comprehensive.
+            </p>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Our journey began with a simple mission: to provide healthcare
+              that treats not just the condition, but the whole person. Today,
+              we continue to uphold this commitment through innovative
+              treatments, personalized care plans, and a team that truly cares.
+            </p>
+            <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-lg">
+              <h4 className="font-semibold text-maroon-900 mb-2">Our Mission</h4>
+              <p className="text-muted-foreground">
+                To provide exceptional, compassionate healthcare services that
+                improve the quality of life for our patients and strengthen our
+                community&apos;s overall health and well-being.
+              </p>
+            </div>
           </div>
+
+          {/* Image Placeholder */}
+<div className="animate-fade-in-up">
+  <div className="relative rounded-2xl overflow-hidden shadow-xl">
+    <div className="aspect-[4/3]">
+      <img
+        src="/raba-team.png" // replace with your actual image path or URL
+        alt="Our Care Team"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+        </div>
+
+        {/* Values Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value, index) => (
+            <div
+              key={value.title}
+              className="about-card animate-fade-in text-center"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <value.icon className="h-12 w-12 text-amber-500 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold text-maroon-900 mb-3">
+                {value.title}
+              </h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {value.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

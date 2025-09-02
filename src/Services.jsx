@@ -1,130 +1,107 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
 
 const Services = () => {
-  const defaultServices = [
+  const services = [
     {
-      service_name: 'Teen Mentorship',
-      description: 'Empowering teens with guidance and confidence.',
-      icon_url: '/teens.png',
+      image: "/couple-counselling.png",
+      title: "Couple counselling",
+      description:
+        "Couple counselling provides a safe and supportive space for partners to openly share their thoughts, feelings, and concerns. It helps couples improve communication, resolve conflicts, rebuild trust, and strengthen their emotional connection. Whether you’re experiencing challenges in your relationship, preparing for marriage, or simply want to deepen your bond, couple counselling empowers both partners to understand each other better and work towards a healthier, more fulfilling relationship.",
     },
     {
-      service_name: 'Author Support',
+      image: "/trauma-therapy.png",
+      title: "Trauma Therapy",
       description:
-        'Helping authors publish, market, and grow their presence with strategic support and expert guidance.',
-      icon_url: '/author-support.png',
+        "Trauma therapy provides a safe environment to process painful or distressing experiences. It helps individuals understand the impact of trauma on their thoughts, emotions, and behaviors while guiding them toward healing and resilience. Through proven therapeutic approaches, clients learn coping strategies, rebuild self-confidence, and regain a sense of control and peace in their lives.",
     },
     {
-      service_name: 'Coaching Sessions',
+      image: "/teens-mentorship.png",
+      title: "Teens Mentorship",
       description:
-        'Coaching Sessions are personalized conversations designed to help individuals gain clarity, overcome obstacles, and take purposeful action toward their goals—guided by a skilled coach in a supportive and confidential space.',
-      icon_url: '/coaching-session.png',
-    },
-    {
-      service_name: 'Group Coaching',
-      description:
-        'Group Coaching offers a collaborative environment where individuals work together toward personal or professional goals. Through shared insights, accountability, and guided facilitation, participants grow in confidence, clarity, and community.',
-      icon_url: '/group-coaching.png',
-    },
-    {
-      service_name: 'Corporate Training',
-      description:
-        'Empowering teams with practical skills, leadership growth, and peak performance strategies to drive organizational success.',
-      icon_url: '/corporate-training.png',
-    },
-    {
-      service_name: 'Couples Coaching',
-      description:
-        'We are a passionate coaching couple dedicated to helping individuals, couples, and teams unlock their full potential. With a blend of empathy, experience, and strategic insight, we guide our clients through personal and professional transformation. Our approach combines the power of partnership with proven coaching methodologies to inspire clarity, confidence, and courageous action.',
-      icon_url: '/couples-coaching.png',
+        "Teen mentorship is designed to guide young people through the challenges of adolescence by providing positive role models, support, and encouragement. It helps teens build confidence, set healthy goals, develop life skills, and make informed decisions. Through mentorship, they gain direction, resilience, and a stronger sense of purpose for their future.",
     },
   ];
 
-  const [services, setServices] = useState(defaultServices);
-  const [expanded, setExpanded] = useState({});
-
-  useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/services')
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch services');
-        return res.json();
-      })
-      .then((data) => {
-        if (Array.isArray(data) && data.length > 0) {
-          setServices(data);
-        }
-      })
-      .catch((err) => {
-        console.warn('Using default services due to error:', err.message);
-      });
-  }, []);
-
-  const toggleReadMore = (index) => {
-    setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
-  };
+  // max length before showing "Learn More"
+  const maxLength = 1200;
 
   return (
-    <section className="py-16 px-6 bg-gray-100 dark:bg-gray-900">
-      {/* Welcome Text */}
-      <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white">
-          Welcome to Our Services
-        </h2>
-        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-          At our core, we are dedicated to empowering individuals, couples,
-          teens, and organizations to unlock their full potential. Explore our
-          tailored services designed to inspire growth, clarity, and lasting
-          transformation.
-        </p>
-      </div>
+    <section
+      id="services"
+      className="mt-12 pt-12 section-padding bg-gradient-to-br from-maroon-50 to-amber-50"
+    >
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-maroon-900 section-title">
+            Our Services
+          </h2>
+          <p className="section-subtitle">
+            Comprehensive healthcare services designed to meet all your medical
+            needs <br /> with expertise, compassion, and cutting-edge technology.
+          </p>
+        </div>
 
-      {/* Services Section */}
-      <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-        What We Offer
-      </h2>
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const isLong = service.description.length > maxLength;
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {services.map((service, index) => {
-          const isExpanded = expanded[index];
-          const shortText = service.description.slice(0, 60);
-          return (
-            <div
-              key={index}
-              className="group bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 transition hover:shadow-xl"
-            >
-              <img
-                src={service.icon_url}
-                alt={service.service_name}
-                className="w-full h-64 object-cover rounded-md transform transition-transform duration-300 group-hover:scale-105"
-              />
-              <h3 className="mt-4 text-lg font-semibold text-gray-800 dark:text-white text-center">
-                {service.service_name}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300 text-center mt-2">
-                {isExpanded
-                  ? service.description
-                  : shortText + (service.description.length > 60 ? '...' : '')}
-              </p>
-              {service.description.length > 60 && (
-                <div className="text-center mt-1">
-                  <button
-                    onClick={() => toggleReadMore(index)}
-                    className="text-amber-500 hover:underline text-sm"
-                  >
-                    {isExpanded ? 'Read less' : 'Read more'}
-                  </button>
+            return (
+              <div
+                key={service.title}
+                className="service-card animate-fade-in rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Service Image */}
+                <div className="w-full">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-auto object-contain" // ✅ shows the full image
+                  />
                 </div>
-              )}
-              <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center">
-                <a
-                  href="#contact"
-                  className="bg-amber-400 text-white px-6 py-2 rounded-md font-semibold hover:bg-amber-500 transition"
-                >
-                  Book Appointment
-                </a>
+
+                {/* Service Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold text-maroon-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
+                    {service.description}
+                  </p>
+
+                  {isLong && (
+                    <button className="bg-customPurple text-white rounded-xl px-4 py-2 w-full hover:bg-customPurple/90 transition">
+                      Learn More
+                    </button>
+                  )}
+                </div>
               </div>
+            );
+          })}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-maroon-900 mb-4">
+              Need to Schedule an Appointment?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Our scheduling team is ready to help you find the right care at
+              the right time. Contact us today to book your appointment.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-amber-400 text-white rounded-xl p-2 btn-primary">
+                Book Appointment
+              </button>
+              <button className="border-2 border-amber-400 text-amber-400 rounded-xl px-4 py-2 hover:bg-amber-400 hover:text-white transition">
+                Call +254787530331
+              </button>
             </div>
-          );
-        })}
+          </div>
+        </div>
       </div>
     </section>
   );
