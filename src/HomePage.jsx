@@ -15,6 +15,7 @@ import Subscribe from './Subscribe';
 import WhatsAppButton from './WhatsAppButton';
 import VideoGallery from './VideoGallary';
 import Assosiates from './Assosiates';
+import FounderMessage from './FounderMessage';
 
 const videos = [
   { id: "6qE5e2pRWyE", title: "Wealth and life" },
@@ -32,7 +33,8 @@ const HomePage = () => {
     <>
       <Navbar />
       <Hero />
-      <DailyInspiration />
+      <FounderMessage/>
+      {/* <DailyInspiration /> */}
       <About />
       <Services />
       <VideoGallery videos={videos}/>
