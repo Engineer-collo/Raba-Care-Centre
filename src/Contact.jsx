@@ -34,9 +34,21 @@ const Contact = () => {
 
   return (
     <section id="contact" className="scroll-mt-20 py-12 px-6 md:px-16">
+              {/* Header */}
+              <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-maroon-900 section-title">
+            Contact Us
+          </h2>
+          <p className="section-subtitle">
+          We're here to help! Reach out to us for appointments, questions, <br/>\ or any healthcare needs. Our team is ready to assist you.
+
+</p>
+        </div>
+
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
         {/* Left - Contact Info */}
         <div>
+
           <h2 className="text-2xl font-bold text-maroon-800 mb-6 border-b-2 border-maroon-900 pb-2">
             Get in Touch
           </h2>
