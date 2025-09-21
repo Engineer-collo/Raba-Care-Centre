@@ -19,11 +19,7 @@ const FounderMessage = () => {
             A Message from Our Founder
           </h2>
           <p className="text-lg leading-relaxed mb-6">
-            At Raba Care Centre, our mission is to nurture, support, and
-            transform lives with compassion and excellence. We believe every
-            individual deserves care that not only meets their needs but uplifts
-            their spirit. Together, we are building a community of hope,
-            strength, and dignity.
+          Dear Community, Welcome to this platform—a space dedicated to fostering growth, healing, and support. We are thrilled to have you embark on this journey with us. Here, you will find a compassionate and understanding community committed to your well-being. Our platform is designed to provide a safe space for self-exploration, offering a range of services to meet your unique needs. Whether you're seeking guidance during challenging times or simply aiming for personal development, our mental health team is here to accompany you on your path to mental and emotional wellness. Thank you for entrusting us with your journey. We look forward to being part of your positive and transformation experience.
           </p>
           <p className="font-semibold text-amber-500">
             – <a href="bio" className="hover:underline  hover:text-amber-800">Doreen Wachira Mbae</a>, Founder

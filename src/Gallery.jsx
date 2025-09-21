@@ -8,13 +8,12 @@ const Gallery = () => {
 
   const galleryItems = [
     {
-        type: "youtube",
-        videoId: "pHcFxVcj0-Q",
-        title: "Post Partum Depression",
-        description: "An informative video about postpartum depression and its effects.",
-        thumbnail: "https://img.youtube.com/vi/pHcFxVcj0-Q/maxresdefault.jpg",
-      },
-      ,
+      type: "youtube",
+      videoId: "pHcFxVcj0-Q",
+      title: "Post Partum Depression",
+      description: "An informative video about postpartum depression and its effects.",
+      thumbnail: "https://img.youtube.com/vi/pHcFxVcj0-Q/maxresdefault.jpg",
+    },
     {
       type: "image",
       src: "/raba-coaching.png",
@@ -22,13 +21,12 @@ const Gallery = () => {
       description: "Comfortable and well-equipped patient accommodations",
     },
     {
-        type: "youtube",
-        videoId: "AclG4Octzkg",
-        title: "Understanding Postpartum Depression",
-        description: "A detailed explanation and awareness video about postpartum depression.",
-        thumbnail: "https://img.youtube.com/vi/AclG4Octzkg/maxresdefault.jpg",
-      }
-      ,
+      type: "youtube",
+      videoId: "AclG4Octzkg",
+      title: "Understanding Postpartum Depression",
+      description: "A detailed explanation and awareness video about postpartum depression.",
+      thumbnail: "https://img.youtube.com/vi/AclG4Octzkg/maxresdefault.jpg",
+    },
     {
       type: "image",
       src: "/raba-teaching1.png",
@@ -36,19 +34,18 @@ const Gallery = () => {
       description: "Our dedicated healthcare professionals",
     },
     {
-        type: "youtube",
-        videoId: "k66r2SZkAXg",
-        title: "Understanding Anxiety Disorders",
-        description: "A video explaining anxiety disorders, symptoms, and possible treatments.",
-        thumbnail: "https://img.youtube.com/vi/k66r2SZkAXg/maxresdefault.jpg",
-      }
-      ,
+      type: "youtube",
+      videoId: "k66r2SZkAXg",
+      title: "Understanding Anxiety Disorders",
+      description: "A video explaining anxiety disorders, symptoms, and possible treatments.",
+      thumbnail: "https://img.youtube.com/vi/k66r2SZkAXg/maxresdefault.jpg",
+    },
     {
       type: "image",
       src: "/raba-couple.png",
       title: "Advanced Technology",
       description: "State-of-the-art medical equipment for precise diagnostics",
-    }
+    },
   ];
 
   const stats = [
@@ -71,18 +68,18 @@ const Gallery = () => {
     return true;
   });
 
-  // Show only 3 initially, expand if "View More" clicked
-  const visibleItems = showAll ? filteredItems : filteredItems.slice(0, 3);
+  // Show only 6 initially (2 rows of 3), expand if "View More" clicked
+  const visibleItems = showAll ? filteredItems : filteredItems.slice(0, 6);
 
   return (
     <section id="gallery" className="mt-6 pt-12 section-padding bg-white scroll-mt-[100px]">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-maroon-900  section-title">Gallery</h2>
+          <h2 className="text-4xl font-bold text-maroon-900 section-title">Gallery</h2>
           <p className="section-subtitle">
-            Take a look at our modern facilities, dedicated team, and <br/> the
-            compassionate care we provide to our community every day.
+            Take a look at our modern facilities, dedicated team, and <br />
+            the compassionate care we provide to our community every day.
           </p>
         </div>
 
@@ -128,7 +125,7 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {visibleItems.map((item, index) => (
             <div
               key={index}
@@ -185,7 +182,7 @@ const Gallery = () => {
         </div>
 
         {/* View More Button */}
-        {filteredItems.length > 3 && (
+        {filteredItems.length > 6 && (
           <div className="text-center mb-16">
             <button
               onClick={() => setShowAll(!showAll)}
@@ -200,7 +197,7 @@ const Gallery = () => {
         <div className="bg-gradient-to-r from-maroon-900 to-maroon-800 rounded-2xl p-8 text-white">
           <h3 className="text-2xl font-bold text-center mb-8">Our Impact</h3>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="bg-amber-400 rounded-full p-3 w-fit mx-auto mb-4">
                   ⭐
