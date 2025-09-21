@@ -26,7 +26,7 @@ const Subscription = () => {
   return (
     <section
       id="subscription"
-      className="pt-12 pb-6 section-padding bg-gradient-to-br from-amber-50 to-maroon-50"
+      className="pt-12 pb-6 section-padding bg-gradient-to-br from-amber-50 to-maroon-50 scroll-mt-[100px]"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
@@ -128,8 +128,18 @@ const Subscription = () => {
                     </form>
 
                     <p className="text-center text-xs text-muted-foreground mt-4">
-                      By subscribing, you agree to our Privacy Policy and Terms
-                      of Service.
+                      By subscribing, you agree to our                 <a
+                  href="privacy"
+                  className="text-maroon-300 hover:text-amber-400 text-xsm transition-colors duration-300"
+                >
+                  Privacy Policy
+                </a> and                 <a
+                  href="terms"
+                  className="text-maroon-300 hover:text-amber-400 text-xsm transition-colors duration-300"
+                >
+                  Terms of Service
+                </a>
+.
                     </p>
                   </>
                 ) : (

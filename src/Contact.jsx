@@ -40,7 +40,7 @@ const Contact = () => {
             Contact Us
           </h2>
           <p className="section-subtitle">
-          We're here to help! Reach out to us for appointments, questions, <br/>\ or any healthcare needs. Our team is ready to assist you.
+          We're here to help! Reach out to us for appointments, questions, <br/> or any healthcare needs. Our team is ready to assist you.
 
 </p>
         </div>

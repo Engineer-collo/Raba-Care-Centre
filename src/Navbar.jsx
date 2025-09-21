@@ -26,8 +26,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-[#581616] text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#581616] text-white shadow-md">
+      <div className=" max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
 {/* Logo + Site Name */}
 <div className="flex items-center gap-3">
   <div className="bg-white p-2 rounded-full shadow-md">
@@ -40,7 +40,9 @@ const Navbar = () => {
       }}
     />
   </div>
-  <span className="text-xl font-bold text-white">Raba Care Center</span>
+  <span className="text-xl font-bold text-white">
+  <a href="#home" className="hover:text-amber-400">Raba Care Center</a>
+  </span>
 </div>
 
         {/* Desktop Menu */}

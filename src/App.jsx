@@ -23,6 +23,9 @@ import VisitorsAdmin from './VisitorsAdmin';
 import BulkEmailSender from './BulkEmailSender';
 import ProtectedAdmin from './ProtectedAdmin';
 import InquiryAdmin from './InquiryAdmin';
+import DoreenBio from './DoreenBio';
+import TermsOfService from './TermsOfService';
+import PrivacyPolicy from './PrivacyPolicy';
 
 
 
@@ -33,6 +36,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/feedback" element={<FeedbackForm />} />
+        <Route path="/bio" element={<DoreenBio />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+
+
 
         {/* Admin Routes with Nested Layout */}
         <Route path="/admin" element={<ProtectedAdmin />}>
@@ -51,6 +59,7 @@ const App = () => {
           <Route path="visitors" element={<VisitorsAdmin />} />
           <Route path="emails" element={<BulkEmailSender />} />
           <Route path="inquiry" element={<InquiryAdmin />} />
+
 
         </Route>
       </Routes>

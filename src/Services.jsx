@@ -28,7 +28,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="mt-12 pt-12 section-padding bg-gradient-to-br from-maroon-50 to-amber-50"
+      className="mt-12 pt-12 section-padding bg-gradient-to-br from-maroon-50 to-amber-50 scroll-mt-[100px]"
     >
       <div className="container mx-auto px-4">
         {/* Header */}
@@ -93,7 +93,7 @@ const Services = () => {
               the right time. Contact us today to book your appointment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-amber-400 text-white rounded-xl p-2 btn-primary">
+              <button className="bg-[#581616] text-white rounded-xl p-2 btn-primary">
                 Book Appointment
               </button>
               <button className="border-2 border-amber-400 text-amber-400 rounded-xl px-4 py-2 hover:bg-amber-400 hover:text-white transition">

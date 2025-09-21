@@ -30,10 +30,10 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="mt-12 pt-12 section-padding bg-white scroll-mt-[100px]">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center  mb-16">
           <h2 className="text-4xl font-bold text-maroon-900  section-title">About Raba Care Center</h2>
           <p className="section-subtitle">
             Dedicated to providing exceptional healthcare services with
@@ -67,6 +67,15 @@ const About = () => {
                 community&apos;s overall health and well-being.
               </p>
             </div>
+            <div className="mt-6 bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-lg">
+              <h4 className="font-semibold text-maroon-900 mb-2">Our Vission</h4>
+              <p className="text-muted-foreground">
+                To provide exceptional, compassionate healthcare services that
+                improve the quality of life for our patients and strengthen our
+                community&apos;s overall health and well-being.
+              </p>
+            </div>
+
           </div>
 
           {/* Image Placeholder */}

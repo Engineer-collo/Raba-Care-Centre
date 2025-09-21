@@ -1,15 +1,41 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+/**
+ * Reusable Button component
+ * Variants: "primary" (filled) | "secondary" (outlined)
+ */
+const Button = ({ children, onClick, type = "button", variant = "primary" }) => {
+  const baseClasses =
+    "font-semibold py-2 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2";
+
+  const variants = {
+    primary:
+      "bg-amber-400 hover:bg-amber-500 text-gray-800 focus:ring-amber-500",
+    secondary:
+      "border border-amber-400 text-amber-400 hover:bg-amber-500 hover:text-white focus:ring-amber-500",
+  };
+
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      className={`${baseClasses} ${variants[variant]}`}
+    >
+      {children}
+    </button>
+  );
+};
 
 const FeedbackForm = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    experience: '',
-    challenges: '',
-    suggestions: '',
+    name: "",
+    email: "",
+    experience: "",
+    challenges: "",
+    suggestions: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -23,7 +49,7 @@ const FeedbackForm = () => {
 
     setErrors((prev) => ({
       ...prev,
-      [e.target.name]: '',
+      [e.target.name]: "",
     }));
   };
 
@@ -32,10 +58,10 @@ const FeedbackForm = () => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required";
     }
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -43,18 +69,24 @@ const FeedbackForm = () => {
       return;
     }
 
-    console.log('Feedback submitted:', formData);
+    console.log("Feedback submitted:", formData);
     setSubmitted(true);
   };
 
   return (
-    <div id="feedback" className="bg-white dark:bg-gray-900 shadow-lg rounded-2xl p-6 md:p-10 mb-8 max-w-3xl mx-auto">
+    <div
+      id="feedback"
+      className="bg-white dark:bg-gray-900 shadow-lg rounded-2xl p-6 md:p-10 mb-8 max-w-3xl mx-auto"
+    >
       <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">
         We Value Your Feedback!
       </h2>
       <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed text-center mb-2">
-        Thank you for visiting our website! Your experience matters to us, and we are always looking for ways to improve.
-        Please take a moment to share your thoughts — let us know what you liked, any challenges you faced while navigating the site, and suggestions on how we can make your visit even better.
+        Thank you for visiting our website! Your experience matters to us, and
+        we are always looking for ways to improve. Please take a moment to share
+        your thoughts — let us know what you liked, any challenges you faced
+        while navigating the site, and suggestions on how we can make your visit
+        even better.
       </p>
 
       {submitted ? (
@@ -63,22 +95,20 @@ const FeedbackForm = () => {
             🎉 Thank you for your feedback!
           </div>
           <div className="text-center">
-            <button
-              type="button"
-              onClick={() => navigate('/')}
-              className="bg-amber-400 hover:bg-amber-500 text-gray-800 font-semibold py-2 px-6 rounded-xl transition-all duration-300"
-            >
+            <Button onClick={() => navigate("/")} variant="primary">
               Back to Home
-            </button>
+            </Button>
           </div>
         </>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-          <p className="text-sm text-gray-500 dark:text-gray-400 italic mt-6  mb-1">
-        Fields marked with <span className="text-red-500">*</span> are mandatory.
-      </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 italic mb-4">
+            Fields marked with <span className="text-red-500">*</span> are
+            mandatory.
+          </p>
 
+          {/* Name */}
+          <div>
             <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
               Name <span className="text-red-500">*</span>
             </label>
@@ -88,13 +118,18 @@ const FeedbackForm = () => {
               value={formData.name}
               onChange={handleChange}
               className={`w-full border ${
-                errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
+                errors.name
+                  ? "border-red-500"
+                  : "border-gray-300 dark:border-gray-700"
               } bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               placeholder="Your name"
             />
-            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+            )}
           </div>
 
+          {/* Email */}
           <div>
             <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
               Email <span className="text-red-500">*</span>
@@ -105,13 +140,18 @@ const FeedbackForm = () => {
               value={formData.email}
               onChange={handleChange}
               className={`w-full border ${
-                errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
+                errors.email
+                  ? "border-red-500"
+                  : "border-gray-300 dark:border-gray-700"
               } bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               placeholder="Your email"
             />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+            )}
           </div>
 
+          {/* Experience */}
           <div>
             <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
               What did you enjoy about the website?
@@ -126,6 +166,7 @@ const FeedbackForm = () => {
             ></textarea>
           </div>
 
+          {/* Challenges */}
           <div>
             <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
               What challenges did you face?
@@ -140,6 +181,7 @@ const FeedbackForm = () => {
             ></textarea>
           </div>
 
+          {/* Suggestions */}
           <div>
             <label className="block text-gray-700 dark:text-gray-200 font-medium mb-1">
               Any suggestions for improvement?
@@ -154,21 +196,14 @@ const FeedbackForm = () => {
             ></textarea>
           </div>
 
+          {/* Buttons */}
           <div className="text-center space-x-4">
-            <button
-              type="submit"
-              className="bg-amber-400 hover:bg-amber-500 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-all duration-300"
-            >
+            <Button type="submit" variant="primary">
               Submit Feedback
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigate('/')}
-              className="bg-amber-400 hover:bg-amber-500 text-gray-800 font-semibold py-2 px-4 rounded-xl transition-all duration-300"
-            >
+            </Button>
+            <Button onClick={() => navigate("/")} variant="secondary">
               Back to Home
-            </button>
+            </Button>
           </div>
         </form>
       )}

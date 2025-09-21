@@ -75,7 +75,7 @@ const Gallery = () => {
   const visibleItems = showAll ? filteredItems : filteredItems.slice(0, 3);
 
   return (
-    <section id="gallery" className="mt-6 pt-12 section-padding bg-white">
+    <section id="gallery" className="mt-6 pt-12 section-padding bg-white scroll-mt-[100px]">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

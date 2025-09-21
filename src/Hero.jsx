@@ -55,8 +55,8 @@ const Hero = () => {
         <div className="flex flex-wrap gap-4">
           <a
             href="#contact"
-            className="inline-block bg-amber-400 hover:bg-amber-500 text-white px-6 py-3 rounded-xl shadow-md transition duration-300"
-          >
+            className="inline-block bg-amber-400 hover:bg-amber-500 text-white font-bold px-6 py-3 rounded-xl shadow-md transition duration-300"
+            >
             {hero.action_button}
           </a>
           <IntroVideo />

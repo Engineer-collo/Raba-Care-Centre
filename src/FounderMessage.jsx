@@ -26,7 +26,7 @@ const FounderMessage = () => {
             strength, and dignity.
           </p>
           <p className="font-semibold text-amber-500">
-            – Doreen Wachira, Founder
+            – <a href="bio" className="hover:underline  hover:text-amber-800">Doreen Wachira Mbae</a>, Founder
           </p>
         </div>
       </div>
