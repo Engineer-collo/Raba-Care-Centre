@@ -77,8 +77,7 @@ const Services = () => {
       title: "Trauma Therapy",
       description:
         "Healing after loss can be overwhelming, but you don't have to do it alone. Through our compassionate approach, we guide you on a journey to rebuild and find peace. Let us help you process your grief and discover strength as you move forward with care and support.",
-    }
-    ,{
+    },{
       image: "/child-therapy.png",
       title: "Adolescent/Child Therapy",
       description:
@@ -86,12 +85,7 @@ const Services = () => {
     }
   ];
 
-  const [expandedIndex, setExpandedIndex] = useState(null);
-  const maxLength = 220; // chars before truncating
-
-  const toggleReadMore = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
+  const [selectedService, setSelectedService] = useState(null);
 
   return (
     <section
@@ -100,83 +94,66 @@ const Services = () => {
     >
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-maroon-900">
-            Our Services
-          </h2>
-          <p className="text-lg text-muted-foreground mt-4">
-            Comprehensive mental health and counseling services <br />
-            delivered with compassion, expertise, and care.
-          </p>
-        </div>
+        {!selectedService && (
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-maroon-900">Our Services</h2>
+            <p className="text-lg text-muted-foreground mt-4">
+              Comprehensive mental health and counseling services <br />
+              delivered with compassion, expertise, and care.
+            </p>
+          </div>
+        )}
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const isExpanded = expandedIndex === index;
-            const textToShow =
-              service.description.length > maxLength && !isExpanded
-                ? service.description.slice(0, maxLength) + "..."
-                : service.description;
-
-            return (
+        {/* If service is clicked show detail page */}
+        {selectedService ? (
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+            <img
+              src={selectedService.image}
+              alt={selectedService.title}
+              className="w-full h-64 object-contain bg-amber-50 rounded-xl mb-6"
+            />
+            <h2 className="text-3xl font-bold text-maroon-900 mb-4">
+              {selectedService.title}
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              {selectedService.description}
+            </p>
+            <button
+              onClick={() => setSelectedService(null)}
+              className="bg-customPurple text-white rounded-xl px-6 py-3 hover:bg-customPurple/90 transition"
+            >
+              Back to Services
+            </button>
+          </div>
+        ) : (
+          // Services Grid
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
               <div
                 key={service.title}
-                className="rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col transform hover:-translate-y-1 transition duration-300"
+                className="rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col transform hover:-translate-y-1 transition duration-300 cursor-pointer"
+                onClick={() => setSelectedService(service)}
               >
-                {/* Service Image */}
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-48 object-contain bg-amber-50"
                 />
-
-                {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold text-maroon-900 mb-3">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
-                    {textToShow}
+                    {service.description.slice(0, 120)}...
                   </p>
-
-                  {service.description.length > maxLength && (
-                    <button
-                      onClick={() => toggleReadMore(index)}
-                      className="bg-customPurple text-white rounded-xl px-4 py-2 hover:bg-customPurple/90 transition"
-                    >
-                      {isExpanded ? "Show Less" : "Learn More"}
-                    </button>
-                  )}
+                  <span className="text-customPurple font-semibold">
+                    Click to Learn More →
+                  </span>
                 </div>
               </div>
-            );
-          })}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-20">
-          <div className="bg-white rounded-2xl shadow-lg p-10 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-maroon-900 mb-4">
-              Need to Schedule an Appointment?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Our scheduling team is ready to help you find the right care at
-              the right time. Contact us today to book your session.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#581616] text-white rounded-xl px-6 py-3 shadow hover:bg-[#451010] transition">
-                Book Appointment
-              </button>
-              <a
-                href="tel:+254787530331"
-                className="border-2 border-amber-400 text-amber-400 rounded-xl px-6 py-3 hover:bg-amber-400 hover:text-white transition"
-              >
-                Call +254 787 530 331
-              </a>
-            </div>
+            ))}
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
