@@ -59,22 +59,23 @@ const About = () => {
               we continue to uphold this commitment through innovative
               treatments, personalized care plans, and a team that truly cares.
             </p>
-            <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-lg">
-              <h4 className="font-semibold text-maroon-900 mb-2">Our Mission</h4>
-              <p className="text-muted-foreground">
-                To provide exceptional, compassionate healthcare services that
-                improve the quality of life for our patients and strengthen our
-                community&apos;s overall health and well-being.
-              </p>
-            </div>
-            <div className="mt-6 bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-lg">
-              <h4 className="font-semibold text-maroon-900 mb-2">Our Vission</h4>
-              <p className="text-muted-foreground">
-                To provide exceptional, compassionate healthcare services that
-                improve the quality of life for our patients and strengthen our
-                community&apos;s overall health and well-being.
-              </p>
-            </div>
+            <div className="bg-red-900 text-white border-l-4 border-amber-400 p-6 rounded-r-lg shadow-md">
+  <h4 className="font-semibold text-white mb-2">Our Mission</h4>
+  <p className="text-gray-200 leading-relaxed">
+    To provide exceptional, compassionate healthcare services that
+    improve the quality of life for our patients and strengthen our
+    community&apos;s overall health and well-being.
+  </p>
+</div>
+
+<div className="mt-6 bg-amber-50 border-l-4 border-red-900 p-6 rounded-r-lg shadow-md">
+  <h4 className="font-semibold text-maroon-900 mb-2">Our Vision</h4>
+  <p className="text-gray-700 leading-relaxed">
+    To provide exceptional, compassionate healthcare services that
+    improve the quality of life for our patients and strengthen our
+    community&apos;s overall health and well-being.
+  </p>
+</div>
 
           </div>
 
