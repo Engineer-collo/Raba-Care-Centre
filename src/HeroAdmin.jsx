@@ -95,7 +95,7 @@ const HeroAdmin = () => {
   };
 
   return (
-    <div className="p-4 max-w-4xl mx-auto dark:bg-gray-900 dark:text-white">
+    <div className="p-4 max-w-4xl mx-auto dark:bg-gray-900 dark:text-white scroll-mt-[100px]">
       <h2 className="text-2xl font-bold mb-4">Hero Admin Panel</h2>
 
       <form

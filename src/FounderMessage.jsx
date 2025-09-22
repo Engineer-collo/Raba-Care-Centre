@@ -7,7 +7,7 @@ const FounderMessage = () => {
         {/* Founder Image */}
         <div className="flex justify-center">
           <img
-            src="/founder.png"
+            src="/doreen-photo1.png"
             alt="Founder Doreen Wachira"
             className="rounded-2xl shadow-lg w-80 h-auto object-cover"
           />

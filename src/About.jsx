@@ -65,10 +65,13 @@ const About = () => {
   To be the most preferred center for comprehensive mental healing services  </p>
 </div>
 
-            <div className=" mt-6 bg-red-900 text-white border-l-4 border-amber-400 p-6 rounded-r-lg shadow-md">
+<div className="mt-6 bg-red-900/85 text-white border-l-4 border-amber-400 p-6 rounded-r-lg shadow-md">
   <h4 className="font-semibold text-white mb-2">Our Mission</h4>
   <p className="text-gray-200 leading-relaxed">
-  We exist to educate society on mental health issues, empowering individuals in their wellness journey, challenging mental health stigma and advocating for psychotherapy for healthier society.  </p>
+    We exist to educate society on mental health issues, empowering individuals
+    in their wellness journey, challenging mental health stigma and advocating
+    for psychotherapy for healthier society.
+  </p>
 </div>
 
 

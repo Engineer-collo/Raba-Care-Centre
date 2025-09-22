@@ -6,6 +6,14 @@ export default function DoreenMbaeProfile() {
       <h1 className="text-3xl font-bold text-gray-900 mb-4">
         Professional Profile: Doreen Wachira Mbae
       </h1>
+              {/* Doreen Image */}
+              <div className="mb-6 flex justify-center">
+          <img
+            src="/doreen-photo2.png"
+            alt="Founder Doreen Wachira"
+            className="rounded-2xl shadow-lg w-80 h-auto object-cover"
+          />
+        </div>
 
       <p className="text-gray-700 mb-6">
         <strong>Doreen Wachira Mbae</strong> is a seasoned <strong>psychologist, mental health advocate, and founder of Raba Care Center</strong>, a Nairobi-based organization dedicated to counselling, trauma healing, and emotional wellbeing. With a strong academic and professional background, she has established herself as a leading voice in mental health and gender-based violence (GBV) response.
