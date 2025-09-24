@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ContactTopBar from './ContactTopBar'
 
 const defaultLogoUrl = "/rabacare.png";
 
@@ -32,6 +33,9 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[#581616] text-white shadow-md">
+      <div>
+        <ContactTopBar/>
+      </div>
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo + Site Name */}
         <div className="flex items-center gap-3">
@@ -58,10 +62,10 @@ const Navbar = () => {
           <a href="#gallery" className="hover:text-amber-400">Gallery</a>
           <a href="#contact" className="hover:text-amber-400">Contact</a>
           <a
-            href="#contact"
+            href="profile"
             className="ml-4 bg-amber-400 text-[#581616] font-semibold px-4 py-2 rounded-lg hover:bg-amber-500 transition"
           >
-            Reach us
+            Our Profile
           </a>
         </nav>
 

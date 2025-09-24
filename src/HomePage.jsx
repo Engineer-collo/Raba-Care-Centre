@@ -46,6 +46,7 @@ const HomePage = () => {
       {/* <BlogCarousel /> */}
       {/* <CallToAction /> */}
       <Contact />
+      <Testimonials/>
       <Subscribe />
      {/* <Assosiates/> */}
       <Footer />

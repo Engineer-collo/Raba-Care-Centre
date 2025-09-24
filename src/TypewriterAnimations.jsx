@@ -1,45 +1,36 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const TypewriterAnimations = ({ 
-  words = [], 
-  typingSpeed = 100, 
-  deletingSpeed = 50, 
-  delay = 1500 
-}) => {
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+const TypewriterAnimations = () => {
+  const words = [
+    "Welcome to Rabacare Center",
+    "Touching Lives, Transforming Societies.",
+  ];
+
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (!words.length) return;
-
-    const currentWord = words[currentWordIndex];
-    let timeout;
-
-    if (isDeleting) {
-      timeout = setTimeout(() => {
-        setText(prev => prev.slice(0, -1));
-      }, deletingSpeed);
-    } else {
-      timeout = setTimeout(() => {
-        setText(prev => currentWord.slice(0, prev.length + 1));
-      }, typingSpeed);
-    }
-
-    if (!isDeleting && text === currentWord) {
-      timeout = setTimeout(() => setIsDeleting(true), delay);
-    } else if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setCurrentWordIndex((prev) => (prev + 1) % words.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, words, currentWordIndex, typingSpeed, deletingSpeed, delay]);
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 4000); // slower change (every 4s)
+    return () => clearInterval(interval);
+  }, [words.length]);
 
   return (
-    <span className="font-mono  font-bold border-r-2 border-black pr-1 animate-pulse">
-      {text}
-    </span>
+    <div className="relative w-full h-20 flex justify-center items-center overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.h1
+          key={words[index]}
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100%", opacity: 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          className="absolute text-3xl font-bold text-red-900 text-center"
+        >
+          {words[index]}
+        </motion.h1>
+      </AnimatePresence>
+    </div>
   );
 };
 

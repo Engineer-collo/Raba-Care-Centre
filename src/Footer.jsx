@@ -124,11 +124,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-amber-400 mr-3" />
-                <p>(555) 123-4567</p>
+                <p>+254787530331</p>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-amber-400 mr-3" />
-                <p>info@rabacarecenter.com</p>
+                <p>info@rabacarecenter.co.ke</p>
               </div>
             </div>
           </div>

@@ -26,6 +26,7 @@ import InquiryAdmin from './InquiryAdmin';
 import DoreenBio from './DoreenBio';
 import TermsOfService from './TermsOfService';
 import PrivacyPolicy from './PrivacyPolicy';
+import CompanyProfile from './CompanyProfile';
 
 
 
@@ -39,6 +40,8 @@ const App = () => {
         <Route path="/bio" element={<DoreenBio />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/profile" element={<CompanyProfile />} />
+
 
 
 
