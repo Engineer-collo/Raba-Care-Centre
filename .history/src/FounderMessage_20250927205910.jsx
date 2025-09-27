@@ -2,7 +2,7 @@ import React from "react";
 
 const FounderMessage = () => {
   return (
-    <section id="rabacare-target"  className="bg-white py-12 px-6 md:px-16 lg:px-24">
+    <section  className="bg-white py-12 px-6 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         {/* Founder Image */}
         <div className="flex justify-center">

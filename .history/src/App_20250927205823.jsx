@@ -1,44 +1,42 @@
-// App.jsx
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// Public Components
-import HomePage from "./HomePage";
-import FeedbackForm from "./FeedbackForm";
-import DoreenBio from "./DoreenBio";
-import TermsOfService from "./TermsOfService";
-import PrivacyPolicy from "./PrivacyPolicy";
-import CompanyProfile from "./CompanyProfile";
-import ThankYouPopup from "./ThankYouPopup";  // 👈 Import here
+import HomePage from './HomePage';
+import FeedbackForm from './FeedbackForm';
 
 // Admin Components
-import ProtectedAdmin from "./ProtectedAdmin";
-import BlogAdmin from "./BlogsAdmin";
-import LogoAdmin from "./LogoAdmin";
-import NavbarAdmin from "./NavbarAdmin";
-import HeroAdmin from "./HeroAdmin";
-import TestimonialAdmin from "./TestimonialAdmin";
-import AboutAdmin from "./AboutAdmin";
-import CoreValuesAdmin from "./CoreValuesAdmin";
-import ServicesAdmin from "./ServicesAdmin";
-import TeamAdmin from "./TeamAdmin";
-import ReviewsAdmin from "./ReviewsAdmin";
-import SubscribeAdmin from "./SubscribeAdmin";
-import ContactAdmin from "./ContactAdmin";
-import VisitorsAdmin from "./VisitorsAdmin";
-import BulkEmailSender from "./BulkEmailSender";
-import InquiryAdmin from "./InquiryAdmin";
+import BlogAdmin from './BlogsAdmin';
+import LogoAdmin from './LogoAdmin';
+import NavbarAdmin from './NavbarAdmin';
+import HeroAdmin from './HeroAdmin';
+import TestimonialAdmin from './TestimonialAdmin';
+import AboutAdmin from './AboutAdmin';
+import CoreValuesAdmin from './CoreValuesAdmin';
+import ServicesAdmin from './ServicesAdmin';
+import TeamAdmin from './TeamAdmin';
+import ReviewsAdmin from './ReviewsAdmin';
+import SubscribeAdmin from './SubscribeAdmin';
+import ContactAdmin from './ContactAdmin';
+import VisitorsAdmin from './VisitorsAdmin';
+import BulkEmailSender from './BulkEmailSender';
+import ProtectedAdmin from './ProtectedAdmin';
+import InquiryAdmin from './InquiryAdmin';
+import DoreenBio from './DoreenBio';
+import TermsOfService from './TermsOfService';
+import PrivacyPolicy from './PrivacyPolicy';
+import CompanyProfile from './CompanyProfile';
+import ThankYouPopup from './ThankYouPopup';
+
+
+
 
 const App = () => {
   return (
     <>
-      {/* Popup will appear only after scroll */}
-      <ThankYouPopup />
-
+    <ThankYouPopup/<
       <Routes>
-        {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/feedback" element={<FeedbackForm />} />
         <Route path="/bio" element={<DoreenBio />} />
@@ -46,7 +44,10 @@ const App = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/profile" element={<CompanyProfile />} />
 
-        {/* Admin Routes */}
+
+
+
+        {/* Admin Routes with Nested Layout */}
         <Route path="/admin" element={<ProtectedAdmin />}>
           <Route path="blogs" element={<BlogAdmin />} />
           <Route path="logo" element={<LogoAdmin />} />
@@ -63,10 +64,10 @@ const App = () => {
           <Route path="visitors" element={<VisitorsAdmin />} />
           <Route path="emails" element={<BulkEmailSender />} />
           <Route path="inquiry" element={<InquiryAdmin />} />
+
+
         </Route>
       </Routes>
-
-      {/* Toast Notifications */}
       <ToastContainer position="top-center" autoClose={3000} />
     </>
   );

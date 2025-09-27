@@ -87,10 +87,11 @@ const Navbar = () => {
           <a href="#gallery" onClick={handleLinkClick} className="hover:text-amber-400">Gallery</a>
           <a href="#contact" onClick={handleLinkClick} className="hover:text-amber-400">Contact</a>
           <a
-            href="profile"
-            className="ml-4 bg-amber-400 text-[#581616] font-semibold px-4 py-2 rounded-lg hover:bg-amber-500 transition"
+            href="#contact"
+            onClick={handleLinkClick}
+            className="bg-amber-400 text-[#581616] font-semibold px-4 py-2 rounded-lg text-center hover:bg-amber-500 transition"
           >
-            Our Profile
+            Reach us
           </a>
         </nav>
       )}

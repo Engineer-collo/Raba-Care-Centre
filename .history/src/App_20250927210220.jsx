@@ -11,7 +11,7 @@ import DoreenBio from "./DoreenBio";
 import TermsOfService from "./TermsOfService";
 import PrivacyPolicy from "./PrivacyPolicy";
 import CompanyProfile from "./CompanyProfile";
-import ThankYouPopup from "./ThankYouPopup";  // 👈 Import here
+import ThankYouPopup from "./ThankYouPopup";
 
 // Admin Components
 import ProtectedAdmin from "./ProtectedAdmin";
@@ -34,8 +34,8 @@ import InquiryAdmin from "./InquiryAdmin";
 const App = () => {
   return (
     <>
-      {/* Popup will appear only after scroll */}
-      <ThankYouPopup />
+      {/* Thank You Popup – can switch between "load" or "scroll" */}
+      <ThankYouPopup trigger="scroll" />
 
       <Routes>
         {/* Public Routes */}
