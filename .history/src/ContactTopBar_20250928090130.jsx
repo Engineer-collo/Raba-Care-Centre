@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, Mail, Facebook, Linkedin, Youtube } from "lucide-react";
+import { Phone, Mail, Facebook, Linkedin } from "lucide-react";
 
 const TopBar = () => {
   return (
@@ -26,23 +26,21 @@ const TopBar = () => {
         {/* Social Icons */}
         <div className="mt-2 md:mt-0 flex justify-center md:justify-end space-x-4">
           <a
-            href="https://web.facebook.com/search/top?q=raba%20care%20center"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-500 transition"
+            className="hover:text-gray-200 transition"
           >
             <Facebook className="w-4 h-4" />
           </a>
-
           <a
-            href="https://www.youtube.com/results?search_query=rabacare+center"
+            href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-red-500 transition"
+            className="hover:text-gray-200 transition"
           >
-            <Youtube className="w-4 h-4" />
+            <Linkedin className="w-4 h-4" />
           </a>
-
         </div>
       </div>
     </div>

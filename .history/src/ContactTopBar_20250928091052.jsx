@@ -38,7 +38,7 @@ const TopBar = () => {
             href="https://www.youtube.com/results?search_query=rabacare+center"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-red-500 transition"
+            className="text-rehover:text-red-500 transition"
           >
             <Youtube className="w-4 h-4" />
           </a>

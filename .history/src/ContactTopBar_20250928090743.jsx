@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, Mail, Facebook, Linkedin, Youtube } from "lucide-react";
+import { Phone, Mail, Facebook, Linkedin } from "lucide-react";
 
 const TopBar = () => {
   return (
@@ -23,27 +23,29 @@ const TopBar = () => {
           </a>
         </div>
 
-        {/* Social Icons */}
-        <div className="mt-2 md:mt-0 flex justify-center md:justify-end space-x-4">
-          <a
-            href="https://web.facebook.com/search/top?q=raba%20care%20center"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-blue-500 transition"
-          >
-            <Facebook className="w-4 h-4" />
-          </a>
+        import { Facebook, Youtube } from "lucide-react";
 
-          <a
-            href="https://www.youtube.com/results?search_query=rabacare+center"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-red-500 transition"
-          >
-            <Youtube className="w-4 h-4" />
-          </a>
+{/* Social Icons */}
+<div className="mt-2 md:mt-0 flex justify-center md:justify-end space-x-4">
+  <a
+    href="https://web.facebook.com/search/top?q=raba%20care%20center"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-blue-500 transition"
+  >
+    <Facebook className="w-4 h-4" />
+  </a>
 
-        </div>
+  <a
+    href="https://www.youtube.com/results?search_query=rabacare+center" // replace with your YouTube link
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-red-500 transition"
+  >
+    <Youtube className="w-4 h-4" />
+  </a>
+</div>
+
       </div>
     </div>
   );

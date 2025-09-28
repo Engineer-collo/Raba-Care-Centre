@@ -30,8 +30,8 @@ const About = () => {
   ];
 
   return (
-    <section   id="about" className="mt-12 pt-12 section-padding bg-white scroll-mt-[100px]">
-      <div id="about-section"  className="container mx-auto px-4">
+    <section id="about" className="mt-12 pt-12 section-padding bg-white scroll-mt-[100px]">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center  mb-16">
           <h2 className="text-4xl font-bold text-maroon-900  section-title">About Raba Care Center</h2>

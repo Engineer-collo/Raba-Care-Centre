@@ -43,6 +43,14 @@ const TopBar = () => {
             <Youtube className="w-4 h-4" />
           </a>
 
+          <a
+            href="https://www.linkedin.com/company/rabacarecenter"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-300 transition"
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </div>

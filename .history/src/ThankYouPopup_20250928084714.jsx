@@ -40,19 +40,13 @@ const ThankYouPopup = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="fixed inset-0 flex items-center justify-center bg-black/40 z-50"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md"
         >
-          <motion.div
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 50, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white rounded-2xl shadow-lg p-6 text-center w-[90%] max-w-md relative"
-          >
+          <div className="bg-white rounded-2xl shadow-lg p-6 text-center relative">
             {/* Close button */}
             <button
               onClick={() => setIsVisible(false)}
@@ -78,7 +72,7 @@ const ThankYouPopup = () => {
                 transition={{ duration: 5, ease: "linear" }}
               />
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
