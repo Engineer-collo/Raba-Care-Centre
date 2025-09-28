@@ -9,14 +9,14 @@ const TopBar = () => {
         <div className="flex justify-between md:justify-start md:space-x-6">
           <a
             href="tel:+254787530331"
-            className=" hover:underline flex items-center hover:text-gray-200 transition"
+            className="flex items-center hover:text-gray-200 transition"
           >
             <Phone className="  w-4 h-4 mr-1" />
             +254787530331
           </a>
           <a
             href="mailto:info@rabacarecenter.co.ke"
-            className="hover:underline flex items-center hover:text-gray-200 transition"
+            className="flex items-center hover:text-gray-200 transition"
           >
             <Mail className="w-4 h-4 mr-1" />
             info@rabacarecenter.co.ke
