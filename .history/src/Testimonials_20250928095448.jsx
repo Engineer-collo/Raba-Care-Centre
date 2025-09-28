@@ -69,16 +69,12 @@ export default function Testimonials({ testimonials }) {
           ))}
         </div>
 
-        <p className="text-center mt-8 text-sm text-gray-500">
-  Want to add your testimonial? 
-  <a
-    href="#contact"
-    className=" text-blue-500 font-semibold font-serif underline font-bold  rounded-lg hover:underline transition"
-  >
-    {" "}Reach out{" "}
-  </a> 
-  — we'd love to feature you.
-</p>
+        <p className="text-center mt-8 text-sm text-gray-500">Want to add your testimonial? <a
+            href="#contact"
+            className=" text-blue-500 font-semibold under rounded-lg hover:underline transition"
+          >
+            {" "}Reach out{" "}
+          </a> — we'd love to feature you.</p>
       </div>
     </section>
   );

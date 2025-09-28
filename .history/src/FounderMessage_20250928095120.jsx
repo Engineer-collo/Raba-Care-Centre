@@ -22,12 +22,12 @@ const FounderMessage = () => {
           Dear Community, Welcome to this platform—a space dedicated to fostering growth, healing, and support. We are thrilled to have you embark on this journey with us. Here, you will find a compassionate and understanding community committed to your well-being. Our platform is designed to provide a safe space for self-exploration, offering a range of services to meet your unique needs. Whether you're seeking guidance during challenging times or simply aiming for personal development, our mental health team is here to accompany you on your path to mental and emotional wellness. Thank you for entrusting us with your journey. We look forward to being part of your positive and transformation experience.
           </p>
           <p className="font-semibold text-amber-500">
-          <a 
-  href="/bio" 
-  className="underline text-blue-600 font-serif font-bold text-lg hover:text-blue-800"
->
-  Doreen Wachira Mbae
-</a>, Founder
+          – <a 
+    href="/bio" 
+    className="text-underline text-blue-500 font-semibold text-lg hover:underline"
+  >
+    Doreen Wachira Mbae
+  </a>, Founder
           </p>
         </div>
       </div>

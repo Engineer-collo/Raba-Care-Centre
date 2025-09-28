@@ -73,7 +73,7 @@ export default function Testimonials({ testimonials }) {
   Want to add your testimonial? 
   <a
     href="#contact"
-    className=" text-blue-500 font-semibold font-serif underline font-bold  rounded-lg hover:underline transition"
+    className=" text-blue-500 font-semibold font-serif font-bold  rounded-lg hover:underline transition"
   >
     {" "}Reach out{" "}
   </a> 
