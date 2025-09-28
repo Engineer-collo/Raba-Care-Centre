@@ -36,11 +36,8 @@ export default function Testimonials({ testimonials }) {
           {list.map((t, i) => (
             <article
               key={i}
-              className="bg-white p-6 rounded-2xl shadow-md 
-              border-t-4 border-t-red-900 
-              border-l-4 border-l-amber-400 
-              flex flex-col items-start"
-             >
+              className="bg-white p-6 rounded-2xl shadow-md border-t-4 border-l-4 border-red-900 flex flex-col items-start"
+            >
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src={t.image}
@@ -59,7 +56,7 @@ export default function Testimonials({ testimonials }) {
                 <div className="inline-flex items-center gap-2 text-sm text-gray-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-amber-500 h-4 w-4"
+                    className="text-h-4 w-4"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

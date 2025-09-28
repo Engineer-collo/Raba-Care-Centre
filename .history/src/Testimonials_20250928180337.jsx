@@ -59,7 +59,7 @@ export default function Testimonials({ testimonials }) {
                 <div className="inline-flex items-center gap-2 text-sm text-gray-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-amber-500 h-4 w-4"
+                    className="text-amber-400 h-4 w-4"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
