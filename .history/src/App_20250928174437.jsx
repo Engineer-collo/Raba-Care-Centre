@@ -31,8 +31,17 @@ import ContactAdmin from "./ContactAdmin";
 import VisitorsAdmin from "./VisitorsAdmin";
 import BulkEmailSender from "./BulkEmailSender";
 import InquiryAdmin from "./InquiryAdmin";
-import ScrollToTop from "./ScrolToTop";
 
+// 👇 ScrollToTop component inside App.jsx
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   return (

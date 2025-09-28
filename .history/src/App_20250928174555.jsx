@@ -31,7 +31,7 @@ import ContactAdmin from "./ContactAdmin";
 import VisitorsAdmin from "./VisitorsAdmin";
 import BulkEmailSender from "./BulkEmailSender";
 import InquiryAdmin from "./InquiryAdmin";
-import ScrollToTop from "./ScrolToTop";
+
 
 
 const App = () => {
