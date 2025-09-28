@@ -34,26 +34,24 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen md:h-[85vh] flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-16 text-white bg-cover bg-center scroll-mt-[100px]"
+      className="relative h-[85vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 text-white bg-cover bg-center scroll-mt-[100px] pt-20"
       style={{ backgroundImage: `url('${hero.background_pic_url}')` }}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent z-0" />
 
       {/* Text Section */}
-      <div className="w-full md:w-1/2 text-center md:text-left space-y-6 relative z-10">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+      <div className="w-full md:w-1/2 text-left space-y-6 py-10 relative z-10">
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           {hero.white_text}
           <br />
           <span className="text-amber-400">{hero.orange_text}</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto md:mx-0">
-          {hero.description}
-        </p>
+        <p className="text-lg text-gray-200">{hero.description}</p>
 
         {/* CTA buttons row */}
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <div className="flex flex-wrap gap-4">
           <a
             href="#contact"
             className="inline-block bg-amber-400 hover:bg-amber-500 text-white font-bold px-6 py-3 rounded-xl shadow-md transition duration-300"

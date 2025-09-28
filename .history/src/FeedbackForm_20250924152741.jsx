@@ -196,15 +196,15 @@ const FeedbackForm = () => {
             ></textarea>
           </div>
 
-{/* Buttons */}
-<div className="flex justify-between mt-4">
-  <Button type="submit" variant="primary">
-    Submit Feedback
-  </Button>
-  <Button onClick={() => navigate("/")} variant="secondary">
-    Back to Home
-  </Button>
-</div>
+          {/* Buttons */}
+          <div className="text-center space-x-4">
+            <Button type="submit" variant="primary">
+              Submit Feedback
+            </Button>
+            <Button onClick={() => navigate("/")} variant="secondary">
+              Back to Home
+            </Button>
+          </div>
         </form>
       )}
     </div>

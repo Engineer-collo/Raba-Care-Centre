@@ -198,7 +198,7 @@ const FeedbackForm = () => {
 
 {/* Buttons */}
 <div className="flex justify-between mt-4">
-  <Button type="submit" variant="primary">
+  <Button  type="submit" variant="primary">
     Submit Feedback
   </Button>
   <Button onClick={() => navigate("/")} variant="secondary">
