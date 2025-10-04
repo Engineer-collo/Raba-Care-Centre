@@ -20,7 +20,7 @@ import Gallery from './Gallery';
 import Faqs from './Faqs'
 import Sustainability from './Sustainability';
 import CoreValues from './CoreValues';
-import Milestone from './Milestone';
+import Milestones from './Milestone';
 
 const videos = [
   { id: "6qE5e2pRWyE", title: "Wealth and life" },

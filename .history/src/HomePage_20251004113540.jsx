@@ -17,10 +17,7 @@ import VideoGallery from './VideoGallary';
 import Assosiates from './Assosiates';
 import FounderMessage from './FounderMessage';
 import Gallery from './Gallery';
-import Faqs from './Faqs'
-import Sustainability from './Sustainability';
-import CoreValues from './CoreValues';
-import Milestone from './Milestone';
+import Faqs from './Faqs'u
 
 const videos = [
   { id: "6qE5e2pRWyE", title: "Wealth and life" },
@@ -41,8 +38,6 @@ const HomePage = () => {
       <FounderMessage/>
       {/* <DailyInspiration /> */}
       <About />
-      <CoreValues/>
-      <Milestone/>
       <Services />
       <Gallery/>
       {/* <VideoGallery videos={videos}/> */}
@@ -54,7 +49,6 @@ const HomePage = () => {
       <Contact />
       <Testimonials/>
       <Faqs/>
-      <Sustainability/>
       <Subscribe />
      {/* <Assosiates/> */}
       <Footer />

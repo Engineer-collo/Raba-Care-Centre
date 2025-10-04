@@ -36,7 +36,9 @@ export default function Testimonials({ testimonials }) {
           {list.map((t, i) => (
             <article
               key={i}
-              className="bg-white p-6 rounded-2xl shadow-md border-l-4 border-t-4 border-red-900 flex flex-col items-start">
+              className="bg-white p-6 rounded-2xl shadow-md 
+              border-t-4 border-t-red-900 flex flex-col items-start"
+             >
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src={t.image}
