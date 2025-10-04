@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "What are the working hours?",
-    answer: "Our services are available Monday to Friday, from 8:00 AM to 6:00 PM and Saturday from 8:00 AM to 12:00 PM. On Sundays we remain closed."
+    answer: "Our services are available Monday to Friday, from 8:00 AM to 6:00 PM. and Saturday from 8:00 AM to 12:00 PM On Sundays we remain closed."
   }
   
   
